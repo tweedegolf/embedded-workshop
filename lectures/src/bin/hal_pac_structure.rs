@@ -21,15 +21,16 @@ fn start() -> ! {
     let _peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init
 
-    // Your initialization code here
-    
+    // TODO Your initialization code here
 
     loop {
-        // Your loop code here
+        // TODO Your main loop code here
     }
 }
 
 #[panic_handler]
 fn panic(_ef: &PanicInfo) -> ! {
-    loop {}
+    loop {
+        // TODO do something with the info
+    }
 }
