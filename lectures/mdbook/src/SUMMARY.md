@@ -16,6 +16,7 @@
         - [The `cortex-m-rt` crate](./1_anatomy/3_cortex_m_cortex_m_rt/3_cortex_m_rt_crate.md)
     - [HALs and PACs](./1_anatomy/4_hal_pac/0_hal_pac.md)
         - [Peripheral Access Crates (PACs)](./1_anatomy/4_hal_pac/1_pac.md)
+        - [Harware Abstraction Libraries (HALs)](./1_anatomy/4_hal_pac/2_hal.md)
     - [Setting up a development environment](./1_anatomy/5_dev_env_setup/0_dev_env_setup.md)
     - [Debugging with GDB]()
     - [Optimization]()

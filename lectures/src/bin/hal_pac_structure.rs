@@ -10,8 +10,10 @@ use stm32l4xx_hal as hal;
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
 
-use core::panic::PanicInfo;
+use core::{any::Any, panic::PanicInfo};
 use cortex_m_rt::entry;
+
+use examples as _;
 
 #[entry]
 fn start() -> ! {
@@ -22,10 +24,16 @@ fn start() -> ! {
     let peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init
 
-    // ANCHOR: pac_example
-    // Set GPIO pin PA0 to high state
-    peripherals.GPIOA.odr.write(|w|  w.odr0().set_bit());
-    // ANCHOR_END: pac_example
+    // ANCHOR: pin_init_hal
+    // Initialize a pin using the HAL
+    let mut rcc = peripherals.RCC.constrain();
+    let mut gpioa = peripherals.GPIOA.split(&mut rcc.ahb2);
+    let mut hal_pin_pa5 = gpioa.pa5.into_push_pull_output_with_state(
+        &mut gpioa.moder,
+        &mut gpioa.otyper,
+        hal::gpio::State::High,
+    );
+    // ANCHOR_END: pin_init_hal
 
     // TODO Your initialization code here
 
