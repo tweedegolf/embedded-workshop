@@ -1,8 +1,18 @@
 # Summary
 
 [Introduction](./0_introduction/1.md)
-- [Anatony of a Rust embedded application](./1_anatomy/1.md)
-
+- [Anatony of a Rust embedded application](./1_anatomy/1_summary.md)
+    - [Constraints](./1_anatomy/2_constraints.md)
+    - [Structure](./1_anatomy/3_structure.md)
+        - [#!\[no_std\] and #!\[no_main\]](./1_anatomy/3_1_structure_attrs.md)
+        - [Entry](./1_anatomy/3_2_structure_entry.md)
+        - [Panic handler](./1_anatomy/3_3_panic_handler.md)
+        - [Minimal Rust embedded program](./1_anatomy/3_4_structure_all.md)
+    - [`cortex-m` and `cortex-m-rt`](./1_anatomy/4_cortex_m_crates.md)
+    - [HALs and PACs]()
+    - [Setting up a development environment]()
+    - [Debugging with GDB]()
+    - [Optimization]()
 - [Peripherals]()
 - [Debugging and analysis]()
 - [Interrupts]()
