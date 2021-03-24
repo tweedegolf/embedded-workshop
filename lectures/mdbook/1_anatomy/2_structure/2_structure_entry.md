@@ -1,7 +1,7 @@
 # Entry
 
 ```rust,noplaypen
-{{#rustdoc_include ../../../src/minimal_structure.rs:entry}}
+{{#rustdoc_include ../../../src/bin/minimal_structure.rs:entry}}
 ```
 
 - No main, but we have to start somewhere: `#[entry]`
