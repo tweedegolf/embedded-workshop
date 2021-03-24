@@ -6,7 +6,7 @@
 use stm32l4xx_hal::stm32 as pac;
 // ANCHOR_END: pac_import
 
-use core::{any::Any, panic::PanicInfo};
+use core::panic::PanicInfo;
 use cortex_m_rt::entry;
 
 #[entry]

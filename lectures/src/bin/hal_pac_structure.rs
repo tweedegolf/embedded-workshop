@@ -12,7 +12,7 @@ use stm32l4xx_hal as hal;
 use hal::prelude::*;
 // ANCHOR_END: prelude
 
-use core::{any::Any, panic::PanicInfo};
+use core::panic::PanicInfo;
 use cortex_m_rt::entry;
 
 #[entry]
@@ -32,7 +32,7 @@ fn start() -> ! {
     // Split the GPIOA block into separate pins
     let mut gpioa = peripherals.GPIOA.split(&mut rcc.ahb2);
     // Initialize pin PA5 as push-pull output, and set it to high state
-    let mut hal_pin_pa5 = gpioa.pa5.into_push_pull_output_with_state(
+    let _hal_pin_pa5 = gpioa.pa5.into_push_pull_output_with_state(
         &mut gpioa.moder,
         &mut gpioa.otyper,
         hal::gpio::State::High,
