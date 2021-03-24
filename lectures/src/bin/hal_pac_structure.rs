@@ -3,13 +3,14 @@
 #![no_main]
 
 // ANCHOR: hal_pac_import
-use stm32l4xx_hal as hal;
 use hal::stm32 as pac;
+use stm32l4xx_hal as hal;
+// ANCHOR_END: hal_pac_import
 
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
-// ANCHOR_END: hal_pac_import
 
+use core::panic::PanicInfo;
 use cortex_m_rt::entry;
 
 #[entry]
@@ -18,8 +19,13 @@ fn start() -> ! {
     // Get a handle to the Cortex-M peripherals
     let _core_peripherals = pac::CorePeripherals::take().unwrap();
     // Get a handle to the STM32L476RG peripherals
-    let _peripherals = pac::Peripherals::take().unwrap();
+    let peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init
+
+    // ANCHOR: pac_example
+    // Set GPIO pin PA0 to high state
+    peripherals.GPIOA.odr.write(|w|  w.odr0().set_bit());
+    // ANCHOR_END: pac_example
 
     // TODO Your initialization code here
 
