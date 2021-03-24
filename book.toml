@@ -1,0 +1,6 @@
+[book]
+authors = ["Henk Dieter Oordt"]
+language = "en"
+multilingual = false
+src = "lectures/src"
+title = "TG Rust embedded workshop"

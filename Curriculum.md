@@ -14,7 +14,7 @@ Blinky with busy waiting
 
 ### Learning outcomes
 - Constraints of no_std programming
-- Structure of embedded rust applicaties
+- Structure of embedded rust applications
 - Relationship HAL and PAC
 - Purpose of cortex-m and cortex-m-rt
 - Setting up a dev env with probe-rs
@@ -23,7 +23,7 @@ Blinky with busy waiting
 
 ### Preparation
 - Slides + story - (6h)
-- Project set up (2h)
+- Project set up (1h)
 - Prepare GDB configuration (2h)
 
 ## 2 Peripherals (1d)
