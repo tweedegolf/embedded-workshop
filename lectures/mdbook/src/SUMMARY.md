@@ -21,7 +21,9 @@
         - [Cargo configuration](./1_anatomy/5_dev_env/1_cargo_configuration.md)
         - [Probe-rs definitions](./1_anatomy/5_dev_env/2_probe-rs_definitions.md)
         - [Linker script](./1_anatomy/5_dev_env/3_linker_script.md)
-    - [Debugging with GDB]()
+    - [Debugging with GDB](./1_anatomy/6_gdb_debug/0_gdb_debug.md)
+        - [Cargo Embed](./1_anatomy/6_gdb_debug/1_cargo_embed.md)
+        - [GDB](./1_anatomy/6_gdb_debug/1_gdb.md)
     - [Optimization]()
 
 - [Peripherals]()
@@ -29,3 +31,6 @@
 - [Interrupts]()
 - [Memory layout]()
 - [Exceptions (bonus)]()
+
+[Embed.toml](./includes/Embed.toml.md)
+[cargo-embed.gdb](./includes/cargo-embed.gdb.md)

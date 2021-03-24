@@ -6,4 +6,5 @@
 - Rustup
 - probe-run
 - gdb-multiarch
+- cargo-embed
 - ...
