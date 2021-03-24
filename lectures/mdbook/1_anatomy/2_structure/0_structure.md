@@ -2,5 +2,5 @@
 
 A minimal embedded Rust program
 ```rust,noplaypen
-{{#rustdoc_include ../../../code/minimal_structure.rs:all}}
+{{#rustdoc_include ../../../src/minimal_structure.rs:all}}
 ```

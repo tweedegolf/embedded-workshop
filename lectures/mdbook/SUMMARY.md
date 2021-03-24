@@ -14,7 +14,7 @@
         - [The arm Cortex-M family](./1_anatomy/3_cortex_m_cortex_m_rt/1_cortex_m_family.md)
         - [The `cortex-m` crate](./1_anatomy/3_cortex_m_cortex_m_rt/2_cortex_m_crate.md)
         - [The `cortex-m-rt` crate](./1_anatomy/3_cortex_m_cortex_m_rt/3_cortex_m_rt_crate.md)
-    - [HALs and PACs]()
+    - [HALs and PACs](./1_anatomy/4_hal_pac/0_hal_pac.md)
     - [Setting up a development environment]()
     - [Debugging with GDB]()
     - [Optimization]()

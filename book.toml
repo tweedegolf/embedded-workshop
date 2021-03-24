@@ -2,5 +2,5 @@
 authors = ["Henk Dieter Oordt"]
 language = "en"
 multilingual = false
-src = "lectures/src"
+src = "lectures/mdbook"
 title = "TG Rust embedded workshop"
