@@ -15,8 +15,6 @@ use hal::prelude::*;
 use core::{any::Any, panic::PanicInfo};
 use cortex_m_rt::entry;
 
-use examples as _;
-
 #[entry]
 fn start() -> ! {
     // ANCHOR: peripheral_init
