@@ -17,7 +17,10 @@
     - [HALs and PACs](./1_anatomy/4_hal_pac/0_hal_pac.md)
         - [Peripheral Access Crates (PACs)](./1_anatomy/4_hal_pac/1_pac.md)
         - [Harware Abstraction Libraries (HALs)](./1_anatomy/4_hal_pac/2_hal.md)
-    - [Setting up a development environment](./1_anatomy/5_dev_env_setup/0_dev_env_setup.md)
+    - [Contents of a Rust embedded development environment](./1_anatomy/5_dev_env/0_dev_env.md)
+        - [Cargo configuration](./1_anatomy/5_dev_env/1_cargo_configuration.md)
+        - [Probe-rs definitions](./1_anatomy/5_dev_env/2_probe-rs_definitions.md)
+        - [Linker script](./1_anatomy/5_dev_env/3_linker_script.md)
     - [Debugging with GDB]()
     - [Optimization]()
 
