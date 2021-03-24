@@ -7,8 +7,10 @@ use hal::stm32 as pac;
 use stm32l4xx_hal as hal;
 // ANCHOR_END: hal_pac_import
 
+// ANCHOR: prelude
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
+// ANCHOR_END: prelude
 
 use core::{any::Any, panic::PanicInfo};
 use cortex_m_rt::entry;
@@ -26,8 +28,12 @@ fn start() -> ! {
 
     // ANCHOR: pin_init_hal
     // Initialize a pin using the HAL
+
+    // Constrain the Reset and Clock Control peripheral
     let mut rcc = peripherals.RCC.constrain();
+    // Split the GPIOA block into separate pins
     let mut gpioa = peripherals.GPIOA.split(&mut rcc.ahb2);
+    // Initialize pin PA5 as push-pull output, and set it to high state
     let mut hal_pin_pa5 = gpioa.pa5.into_push_pull_output_with_state(
         &mut gpioa.moder,
         &mut gpioa.otyper,
