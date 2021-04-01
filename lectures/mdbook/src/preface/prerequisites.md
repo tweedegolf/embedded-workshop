@@ -7,4 +7,5 @@
 - probe-run
 - gdb-multiarch
 - cargo-embed
+- openocd
 - ...

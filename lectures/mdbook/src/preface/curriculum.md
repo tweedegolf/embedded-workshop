@@ -92,7 +92,7 @@ Configure fall detection IRQ on lis3dh, catch it using EXTI, read out data
 - Bare-metal project set up (2h)
 
 ## 5 Memory layout (1d)
-- Yypes of memory
+- Types of memory
 - Memory map
 - MPU
 - Linker scripts
