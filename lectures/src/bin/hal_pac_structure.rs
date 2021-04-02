@@ -40,7 +40,6 @@ fn start() -> ! {
     // ANCHOR_END: pin_init_hal
 
     // TODO Your initialization code here
-
     loop {
         // TODO Your main loop code here
     }

@@ -1,5 +1,10 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-runner = "probe-run --chip STM32L476RG"
+# Uncomment the line below to use probe-rs
+# runner = "probe-run --chip STM32L476RGTx"
+# Uncomment the line below to GDB with OpenOCD
+# runner = "gdb-multiarch -x openocd.gdb"
+#Uncomment the line below to GDB with Cargo Embed
+runner = "gdb-multiarch -x cargo-embed.gdb"
 rustflags = [
   "-C", "linker=flip-link",
   "-C", "link-arg=-Tlink.x",
@@ -14,9 +19,11 @@ rustflags = [
 # target improves performance)
 # target = "thumbv6m-none-eabi"    # Cortex-M0 and Cortex-M0+
 # target = "thumbv7m-none-eabi"    # Cortex-M3
-# target = "thumbv7em-none-eabi"   # Cortex-M4 and Cortex-M7 (no FPU)
-target = "thumbv7em-none-eabihf" # Cortex-M4F and Cortex-M7F (with FPU)
+target = "thumbv7em-none-eabi"   # Cortex-M4 and Cortex-M7 (no FPU)
+# target = "thumbv7em-none-eabihf" # Cortex-M4F and Cortex-M7F (with FPU)
 
 [alias]
 rb = "run --bin"
 rrb = "run --release --bin"
+gdb = "run -p assignments --bin"
+gdbserver = "embed --chip STM32L476RGTx --bin"

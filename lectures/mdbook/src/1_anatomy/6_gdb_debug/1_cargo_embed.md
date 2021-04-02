@@ -4,8 +4,10 @@
 
 - Configuration in [`Embed.toml`](../../includes/Embed.toml.md)
 
-- Works like `cargo run`
+- Works like `cargo run`, but runs in background
 ```bash
 $ cargo embed --chip STM32L476RG -p examples --bin hal_pac_structure --release
 ```
-- Acts as a GDB server
+
+- Can act as a GDB server
+- Prints a whole load of warnings, but works fine
