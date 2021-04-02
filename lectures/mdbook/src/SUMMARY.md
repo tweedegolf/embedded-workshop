@@ -22,9 +22,8 @@
         - [Probe-rs definitions](./1_anatomy/5_dev_env/2_probe-rs_definitions.md)
         - [Linker script](./1_anatomy/5_dev_env/3_linker_script.md)
     - [Debugging with GDB](./1_anatomy/6_gdb_debug/0_gdb_debug.md)
-        - [Cargo Embed]()
-        - [OpenOCD](./1_anatomy/6_gdb_debug/2_openocd.md)
-        - [GDB](./1_anatomy/6_gdb_debug/3_gdb.md)
+        - [Cargo Embed](./1_anatomy/6_gdb_debug/1_cargo_embed.md)
+        - [GDB](./1_anatomy/6_gdb_debug/2_gdb.md)
     - [Optimization]()
 
 - [Peripherals]()

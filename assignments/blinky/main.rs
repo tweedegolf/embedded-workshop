@@ -14,7 +14,7 @@ use cortex_m_rt::{entry};
 // so we can print messages.
 // Also contains a panic handler,
 // so we don't need to add it here anymore
-// use assignments as _;
+use assignments as _;
 
 #[entry]
 fn start() -> ! {
@@ -23,15 +23,8 @@ fn start() -> ! {
     // Initialize LED pin as output
     // Initialize button pun as input
 
-    // defmt::info!("Hello, world");
+    defmt::info!("Hello, world");
     loop {
-        cortex_m_semihosting::hprintln!("HELLO WORLD");
-        // TODO Read input pin state, checking if button was pressed
-        // TODO 
+        // TODO
     }
-}
-
-#[panic_handler]
-fn panic(_ef: &PanicInfo) -> ! {
-    loop {}
 }

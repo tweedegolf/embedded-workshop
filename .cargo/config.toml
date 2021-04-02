@@ -1,17 +1,17 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
 # Uncomment the line below to use probe-rs
-#runner = "probe-run --chip STM32L476RG"
+# runner = "probe-run --chip STM32L476RGTx"
 # Uncomment the line below to GDB with OpenOCD
-runner = "gdb-multiarch -x openocd.gdb"
-# Uncomment the line below to GDB with Cargo Embed
-#runner = "gdb-multiarch -x cargo-embed.cfg"
+# runner = "gdb-multiarch -x openocd.gdb"
+#Uncomment the line below to GDB with Cargo Embed
+runner = "gdb-multiarch -x cargo-embed.gdb"
 rustflags = [
-  #"-C", "linker=flip-link",
+  "-C", "linker=flip-link",
   "-C", "link-arg=-Tlink.x",
-  #"-C", "link-arg=-Tdefmt.x",
+  "-C", "link-arg=-Tdefmt.x",
   # This is needed if your flash or ram addresses are not aligned to 0x10000 in memory.x
   # See https://github.com/rust-embedded/cortex-m-quickstart/pull/95
-  #"-C", "link-arg=--nmagic",
+  "-C", "link-arg=--nmagic",
 ]
 
 [build]
@@ -25,3 +25,5 @@ target = "thumbv7em-none-eabi"   # Cortex-M4 and Cortex-M7 (no FPU)
 [alias]
 rb = "run --bin"
 rrb = "run --release --bin"
+gdb = "run -p assignments --bin"
+gdbserver = "embed --chip STM32L476RGTx --bin"

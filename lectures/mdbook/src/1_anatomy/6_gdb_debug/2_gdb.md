@@ -10,8 +10,6 @@ To enable it, edit `.cargo/config.toml`, and uncomment one of the runners:
 ```toml
 # Uncomment the line below to use probe-rs
 runner = "probe-run --chip STM32L476RG"
-# Uncomment the line below to GDB with OpenOCD
-runner = "gdb-multiarch -x openocd.gdb"
 # Uncomment the line below to GDB with Cargo Embed
 runner = "gdb-multiarch -x cargo-embed.cfg"
 ```
@@ -24,4 +22,6 @@ $ cargo run -p assignments --bin blinky
 
 ## Common commands
 
-- `bt` 
+- `bt` (`backtrace`)
+- `i lo` (`info locals`)
+- `i va` (`info variables`)
