@@ -8,5 +8,6 @@
 ```bash
 $ cargo embed --chip STM32L476RG -p examples --bin hal_pac_structure --release
 ```
-- Can act as a GDB server
 
+- Can act as a GDB server
+- Prints a whole load of warnings, but works fine

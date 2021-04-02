@@ -14,7 +14,13 @@ use cortex_m_rt::{entry};
 // so we can print messages.
 // Also contains a panic handler,
 // so we don't need to add it here anymore
-use assignments as _;
+
+
+struct Data {
+    x: u32,
+    y: &'static str,
+    z: Option<u8>,
+}
 
 #[entry]
 fn start() -> ! {
@@ -23,8 +29,22 @@ fn start() -> ! {
     // Initialize LED pin as output
     // Initialize button pun as input
 
-    defmt::info!("Hello, world");
+    let mut x: usize = 0;
+    let d = Data {
+        x: 123,
+        y: "Hello, world!",
+        z: Some(123),
+    };
+
+    let f = &d;
+    
     loop {
-        // TODO Read input pin state, checking if button was pressed
+        x += 1;
+        // TODO
     }
+}
+
+#[panic_handler]
+fn panic(_ef: &PanicInfo) -> ! {
+    loop {}
 }

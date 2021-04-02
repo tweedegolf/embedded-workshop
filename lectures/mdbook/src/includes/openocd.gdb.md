@@ -1,3 +1,1 @@
-```
-{{#rustdoc_include ../../../../openocd.gdb}}
-```
+# openocd.gdb
