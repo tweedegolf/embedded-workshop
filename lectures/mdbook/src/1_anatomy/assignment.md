@@ -15,6 +15,7 @@
 
 
 **LED and Button connections**
+
 | Item | GPIO Pin |
 | ---- | -------- |
 | LED1 | P0.13    |
