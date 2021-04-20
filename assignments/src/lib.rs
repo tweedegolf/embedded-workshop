@@ -4,7 +4,7 @@ use core::sync::atomic::{AtomicUsize, Ordering};
 
 use defmt_rtt as _; // global logger
 
-use stm32l4xx_hal as hal; // memory layout
+use nrf52840_hal as hal; // memory layout
 
 use panic_probe as _;
 
