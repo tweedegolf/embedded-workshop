@@ -1,8 +1,8 @@
 #![no_std]
 #![no_main]
 
-use hal::stm32 as pac;
-use stm32l4xx_hal as hal;
+use nrf52840_hal as hal;
+use hal::pac ;
 
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
@@ -24,11 +24,6 @@ struct Data {
 
 #[entry]
 fn start() -> ! {
-    // Get a handle to te Peripherals
-
-    // Initialize LED pin as output
-    // Initialize button pun as input
-
     let mut x: usize = 0;
     let d = Data {
         x: 123,
