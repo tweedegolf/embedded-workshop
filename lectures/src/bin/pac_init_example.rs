@@ -3,7 +3,7 @@
 #![no_main]
 
 // ANCHOR: pac_import
-use stm32l4xx_hal::stm32 as pac;
+use nrf52840_hal::pac;
 // ANCHOR_END: pac_import
 
 use core::panic::PanicInfo;
@@ -12,33 +12,30 @@ use cortex_m_rt::entry;
 #[entry]
 fn start() -> ! {
     // ANCHOR: peripheral_init
-    // Get a handle to the Cortex-M peripherals
+    // Get a handle to the Cortex-M common peripherals
     let _core_peripherals = pac::CorePeripherals::take().unwrap();
-    // Get a handle to the STM32L476RG peripherals
+    // Get a handle to the nRF52840 device peripherals
     let peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init
 
     // ANCHOR: pin_init_pac
     // Initialize a pin using the PAC
-    // Enable the GPIOA peripheral
-    peripherals.RCC.ahb2enr.write(|w| w.gpioaen().set_bit());
-    peripherals.RCC.ahb2rstr.write(|w| w.gpioarst().set_bit());
-    peripherals.RCC.ahb2rstr.write(|w| w.gpioarst().clear_bit());
 
-    // Set GPIO pin PA5 to output mode
-    peripherals
-        .GPIOA
-        .moder
-        .write(|w| w.moder5().output());
+    // Get a handle to GPIO port P0
+    let port_p0 = peripherals.P0;
+    
+    // Set output level to low
+    port_p0.outclr.write(|w| w.pin13().set_bit());
 
-    // Set GPIO pin PA5 to push-pull-output mode
-    peripherals
-        .GPIOA
-        .otyper
-        .write(|w| w.ot5().push_pull());
+    // Put the pin in push-pull output mode
+    port_p0.pin_cnf[13].write(|w| {
+        w.dir().output();
+        w.pull().disabled();
+        w.drive().s0s1();
+        w.sense().disabled();
+        w
+    });
 
-    // Set GPIO pin PA5 to high state
-    peripherals.GPIOA.odr.write(|w| w.odr5().set_bit());
     // ANCHOR_END: pin_init_pac
 
     // TODO Your initialization code here
