@@ -5,4 +5,4 @@
 - Access to core peripherals
 - Access to core registers
 - Interrupt manipulation mechanisms
-- Safe wrappers around Cortex-M specific instructions
+- Safe wrappers around Cortex-M-specific instructions

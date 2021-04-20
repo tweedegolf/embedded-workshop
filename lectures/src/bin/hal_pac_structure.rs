@@ -20,6 +20,7 @@ fn start() -> ! {
     // ANCHOR: peripheral_init
     // Get a handle to the Cortex-M peripherals
     let _core_peripherals = pac::CorePeripherals::take().unwrap();
+    
     // Get a handle to the STM32L476RG peripherals
     let peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init
@@ -29,8 +30,10 @@ fn start() -> ! {
 
     // Constrain the Reset and Clock Control peripheral
     let mut rcc = peripherals.RCC.constrain();
+
     // Split the GPIOA block into separate pins
     let mut gpioa = peripherals.GPIOA.split(&mut rcc.ahb2);
+
     // Initialize pin PA5 as push-pull output, and set it to high state
     let _hal_pin_pa5 = gpioa.pa5.into_push_pull_output_with_state(
         &mut gpioa.moder,
