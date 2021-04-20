@@ -3,8 +3,8 @@
 #![no_main]
 
 // ANCHOR: hal_pac_import
-use hal::stm32 as pac;
-use stm32l4xx_hal as hal;
+use nrf52840_hal as hal;
+use hal::pac;
 // ANCHOR_END: hal_pac_import
 
 // ANCHOR: prelude
@@ -18,28 +18,19 @@ use cortex_m_rt::entry;
 #[entry]
 fn start() -> ! {
     // ANCHOR: peripheral_init
-    // Get a handle to the Cortex-M peripherals
+    // Get a handle to the Cortex-M common peripherals
     let _core_peripherals = pac::CorePeripherals::take().unwrap();
-    
-    // Get a handle to the STM32L476RG peripherals
+
+    // Get a handle to the nRF52840 device peripherals
     let peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init
 
     // ANCHOR: pin_init_hal
-    // Initialize a pin using the HAL
+    // Initialize port0
+    let port0 = hal::gpio::p0::Parts::new(peripherals.P0);
 
-    // Constrain the Reset and Clock Control peripheral
-    let mut rcc = peripherals.RCC.constrain();
-
-    // Split the GPIOA block into separate pins
-    let mut gpioa = peripherals.GPIOA.split(&mut rcc.ahb2);
-
-    // Initialize pin PA5 as push-pull output, and set it to high state
-    let _hal_pin_pa5 = gpioa.pa5.into_push_pull_output_with_state(
-        &mut gpioa.moder,
-        &mut gpioa.otyper,
-        hal::gpio::State::High,
-    );
+    // Initialize pin p0.13 as push-pull output, and set it to high state
+    let _led_1_pin = port0.p0_13.into_push_pull_output(hal::gpio::Level::Low);
     // ANCHOR_END: pin_init_hal
 
     // TODO Your initialization code here
