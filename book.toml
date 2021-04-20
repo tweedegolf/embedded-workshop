@@ -4,3 +4,7 @@ language = "en"
 multilingual = false
 src = "lectures/mdbook/src"
 title = "TG Rust embedded workshop"
+
+
+[output.html]
+additional-css = ["lectures/assets/main.css"]

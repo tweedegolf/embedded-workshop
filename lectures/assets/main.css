@@ -1,0 +1,9 @@
+.content main {
+    --content-max-width: 80%;
+    font-size: 3rem;
+}
+
+.content img {
+    display: block;
+    margin: 0 auto;
+}
