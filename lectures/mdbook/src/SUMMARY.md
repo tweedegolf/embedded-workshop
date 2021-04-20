@@ -24,7 +24,7 @@
     - [Debugging with GDB](./1_anatomy/6_gdb_debug/0_gdb_debug.md)
         - [Cargo Embed](./1_anatomy/6_gdb_debug/1_cargo_embed.md)
         - [GDB](./1_anatomy/6_gdb_debug/2_gdb.md)
-    - [Optimization]()
+    - [Assignment](./1_anatomy/assignment.md)
 
 - [Peripherals]()
 - [Debugging and analysis]()

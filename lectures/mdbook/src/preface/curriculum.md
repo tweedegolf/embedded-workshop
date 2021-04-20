@@ -2,15 +2,15 @@
 
 ## 1 Anatomy of a Rust Embedded application (0,5d)
 ### Subjects
-- no_std
-- HAL/PAC
-- cortex-m(-rt)
-- dev env (probe-rs e.d.)
+- Constraints of no_std environment.
+- Structure of a typical Rust Embedded application 
+- Purpose of HAL/PAC crates
+- Purposes of cortex-m(-rt) crates
+- Setting up a development environment (probe-rs e.d.)
 - GDB usage
-- optimisation
 
 ### Assignment
-Blinky with busy waiting
+Blinky with button
 
 ### Learning outcomes
 - Constraints of no_std programming
