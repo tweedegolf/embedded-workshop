@@ -6,7 +6,7 @@
 
 - Works like `cargo run`, but runs in background
 ```bash
-$ cargo embed --chip STM32L476RG -p examples --bin hal_pac_structure --release
+$ cargo embed --chip nRF52840 -p examples --bin hal_pac_structure --release
 ```
 
 - Can act as a GDB server

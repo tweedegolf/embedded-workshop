@@ -1,6 +1,7 @@
 # Introduction
 
 # Required hardware
+- nRF52840-DK
 
 # Required software
 - Rustup

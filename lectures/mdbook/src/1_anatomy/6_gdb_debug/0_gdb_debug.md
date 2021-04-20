@@ -1,6 +1,6 @@
 # Debugging with GDB
 
-- Our Nucleo contains an on-board [ST-Link/V2.1](https://www.st.com/en/development-tools/st-link-v2.html) debugger
-- Uses SWD protocol to flash device, set breakpoints, read arbitrary memory etc.
+- Our nRF52840-DK contains an on-board [J-Link](https://www.st.com/en/development-tools/st-link-v2.html) debugger
+- Able to flash device, set breakpoints, read arbitrary memory etc.
 
-![](https://www.st.com/bin/ecommerce/api/image.PF251168.en.feature-description-include-personalized-no-cpn-medium.jpg )
+![](https://docs.zephyrproject.org/latest/_images/nrf52840dk_nrf52840.jpg)

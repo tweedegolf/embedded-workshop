@@ -17,5 +17,5 @@
     - Cortex-M0+
     - Cortex-M0
 
-- A chip vendor, like ST, adds their own components to the arm core
+- A chip vendor, like Nordic, adds their own components to the arm core
 - Thus, many different chips share the same core

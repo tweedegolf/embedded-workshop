@@ -34,5 +34,3 @@
 
 [Embed.toml](./includes/Embed.toml.md)
 [cargo-embed.gdb](./includes/cargo-embed.gdb.md)
-[openocd.cfg](./includes/openocd.cfg.md)
-[openocd.gdb](./includes/openocd.gdb.md)
