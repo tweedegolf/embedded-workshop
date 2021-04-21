@@ -29,6 +29,7 @@
 - [Peripherals](./2_peripherals/0_summary.md)
     - [Core, busses, and peripherals](./2_peripherals/1_buses/0_buses.md)
         - [nRF52840 block diagram](./2_peripherals/1_buses/1_block_diagram.md)
+    - [Timers/counters (TIMER)](./2_peripherals/2_timer/0_timer.md)
 
 - [Debugging and analysis]()
 - [Interrupts]()
