@@ -29,11 +29,13 @@
 - [Peripherals](./2_peripherals/0_summary.md)
     - [Core, busses, and peripherals](./2_peripherals/1_buses/0_buses.md)
         - [nRF52840 block diagram](./2_peripherals/1_buses/1_block_diagram.md)
-    - [Timers/counters (TIMER)](./2_peripherals/2_timer/0_timer.md)
-        - [Timer mode](./2_peripherals/2_timer/1_timer_mode.md)
-        - [Counter mode](./2_peripherals/2_timer/2_counter_mode.md)
-    - [Universal asynchronous receiver/transmitter (UART)](./2_peripherals/3_uart/0_uart.md)
-        - [UART timing](./2_peripherals/3_uart/1_uart_timing.md)
+    - [General Purpose Input/Output (GPIO)](./2_peripherals/2_gpio/0_gpio.md)
+    
+    - [Timers/counters (TIMER)](./2_peripherals/3_timer/0_timer.md)
+        - [Timer mode](./2_peripherals/3_timer/1_timer_mode.md)
+        - [Counter mode](./2_peripherals/3_timer/2_counter_mode.md)
+    - [Universal asynchronous receiver/transmitter (UART)](./2_peripherals/4_uart/0_uart.md)
+        - [UART timing](./2_peripherals/4_uart/1_uart_timing.md)
 
 - [Debugging and analysis]()
 - [Interrupts]()

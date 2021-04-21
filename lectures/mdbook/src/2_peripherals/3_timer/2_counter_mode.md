@@ -2,5 +2,5 @@
 - Disconnected from clock
 - Increments count whenever 'something' happens
 
-### Useful for:
+### Useful for
 - Counting button presses, clock pulses, etc.
