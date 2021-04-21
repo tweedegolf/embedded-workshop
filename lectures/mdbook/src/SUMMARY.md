@@ -42,6 +42,9 @@
         - [SPI configuration](./2_peripherals/5_spi/2_spi_configuration.md)
         - [SPI applications](./2_peripherals/5_spi/3_spi_applications.md)
     - [Inter-integrated circuit (I2C)](./2_peripherals/6_i2c/0_i2c.md)
+        - [I2C timing](./2_peripherals/6_i2c/1_i2c_timing.md)
+        - [I2C configuration](./2_peripherals/6_i2c/2_i2c_configuration.md)
+        - [I2C applications](./2_peripherals/6_i2c/3_i2c_applications.md)
 
 
 - [Debugging and analysis]()
