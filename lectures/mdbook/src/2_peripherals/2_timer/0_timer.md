@@ -4,7 +4,7 @@
 
 <img src="https://infocenter.nordicsemi.com/topic/ps_nrf52840/ip/timer/doc/image/block.svg" width="70%"/>
 
-## Configuration parameters:
+## Configuration parameters
 - Prescaler
 - Compare value
 - Mode

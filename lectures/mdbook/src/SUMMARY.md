@@ -32,6 +32,8 @@
     - [Timers/counters (TIMER)](./2_peripherals/2_timer/0_timer.md)
         - [Timer mode](./2_peripherals/2_timer/1_timer_mode.md)
         - [Counter mode](./2_peripherals/2_timer/2_counter_mode.md)
+    - [Universal asynchronous receiver/transmitter (UART)](./2_peripherals/3_uart/0_uart.md)
+        - [UART timing](./2_peripherals/3_uart/1_uart_timing.md)
 
 - [Debugging and analysis]()
 - [Interrupts]()

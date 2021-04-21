@@ -30,7 +30,7 @@ Blinky with button
 ### Subjects
 - SPI
 - I2C
-- USART
+- UART
 - RTC
 - Timers
 - Rust ownership and peripherals
