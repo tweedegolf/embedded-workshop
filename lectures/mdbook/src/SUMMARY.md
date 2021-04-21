@@ -26,7 +26,10 @@
         - [GDB](./1_anatomy/6_gdb_debug/2_gdb.md)
     - [Assignment](./1_anatomy/assignment.md)
 
-- [Peripherals]()
+- [Peripherals](./2_peripherals/0_summary.md)
+    - [Core, busses, and peripherals](./2_peripherals/1_buses/0_buses.md)
+        - [nRF52840 block diagram](./2_peripherals/1_buses/1_block_diagram.md)
+
 - [Debugging and analysis]()
 - [Interrupts]()
 - [Memory layout]()
