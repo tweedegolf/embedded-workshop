@@ -3,6 +3,7 @@
 Widely used short-distance communication protocol.
 
 - Full-duplex communication
+- Shared bus
 - Developed by Motorola in 80s
 
 ## Lines

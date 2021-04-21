@@ -9,16 +9,4 @@
 - Transmit (TX)
 - Receive (RX)
 
-## Configuration parameters
-- Baud rate (bps)
-- Parity bit on/off
-- 1 or 2 stop bits
-- Frame size (5 - 9 bits)
-
-Tradeoffs between speed and error resistance
-
-## Useful for
-- Logging
-- Modems
-
-<img src="https://infocenter.nordicsemi.com/topic/ps_nrf52840/ip/uart/doc/image/uart_config.svg" width="70%"/>
+![](https://raw.githubusercontent.com/OnionIoT/Onion-Docs/master/Omega2/Documentation/Doing-Stuff/img/uart-tx-rx-cross.png)

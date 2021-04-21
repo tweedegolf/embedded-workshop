@@ -1,4 +1,4 @@
-## Configuration parameters
+# SPI Configuration parameters
 - Clock frequency
 - Clock polarity
 - Clock phase

@@ -35,10 +35,13 @@
         - [Counter mode](./2_peripherals/3_timer/2_counter_mode.md)
     - [Universal asynchronous receiver/transmitter (UART)](./2_peripherals/4_uart/0_uart.md)
         - [UART timing](./2_peripherals/4_uart/1_uart_timing.md)
+        - [UART configuration](./2_peripherals/4_uart/2_uart_configuration.md)
+        - [UART applications](./2_peripherals/4_uart/3_uart_applications.md)
     - [Serial Peripheral Interface (SPI)](./2_peripherals/5_spi/0_spi.md)
         - [SPI timing](./2_peripherals/5_spi/1_spi_timing.md)
         - [SPI configuration](./2_peripherals/5_spi/2_spi_configuration.md)
         - [SPI applications](./2_peripherals/5_spi/3_spi_applications.md)
+    - [Inter-integrated circuit (I2C)](./2_peripherals/6_i2c/0_i2c.md)
 
 
 - [Debugging and analysis]()
