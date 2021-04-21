@@ -30,12 +30,16 @@
     - [Core, busses, and peripherals](./2_peripherals/1_buses/0_buses.md)
         - [nRF52840 block diagram](./2_peripherals/1_buses/1_block_diagram.md)
     - [General Purpose Input/Output (GPIO)](./2_peripherals/2_gpio/0_gpio.md)
-    
     - [Timers/counters (TIMER)](./2_peripherals/3_timer/0_timer.md)
         - [Timer mode](./2_peripherals/3_timer/1_timer_mode.md)
         - [Counter mode](./2_peripherals/3_timer/2_counter_mode.md)
     - [Universal asynchronous receiver/transmitter (UART)](./2_peripherals/4_uart/0_uart.md)
         - [UART timing](./2_peripherals/4_uart/1_uart_timing.md)
+    - [Serial Peripheral Interface (SPI)](./2_peripherals/5_spi/0_spi.md)
+        - [SPI timing](./2_peripherals/5_spi/1_spi_timing.md)
+        - [SPI configuration](./2_peripherals/5_spi/2_spi_configuration.md)
+        - [SPI applications](./2_peripherals/5_spi/3_spi_applications.md)
+
 
 - [Debugging and analysis]()
 - [Interrupts]()
