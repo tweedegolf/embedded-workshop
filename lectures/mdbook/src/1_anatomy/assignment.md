@@ -1,5 +1,26 @@
 # Assignment 1
 
+## Flash the board
+- Install the [required software](./) and flash the blinky application to your board. 
+
+```bash
+$ cargo run -p assignments --bin blinky
+```
+Or, using an alias:
+```bash
+$ cargo rb blinky
+```
+
+You should get an output like this:
+```
+    Finished dev [unoptimized + debuginfo] target(s) in 0.60s
+     Running `probe-run --chip nRF52840 target/thumbv7em-none-eabi/debug/blinky`
+  (HOST) INFO  flashing program (15.23 KiB)
+  (HOST) INFO  success!
+────────────────────────────────────────────────────────────────────────────────
+       0 INFO  Hello, world
+```
+
 ## Get the LEDS working
 - Initialize the LEDS, and switch them on. To do so, use the table below to find out which pin is connected to which LEDs, put the pin in push-pull output mode, and set its state to low. The LEDs are active low, meaning that they are switched on with a low pin state, and switched off by setting a pin to high.
 

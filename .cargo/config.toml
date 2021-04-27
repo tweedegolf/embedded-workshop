@@ -21,7 +21,7 @@ target = "thumbv7em-none-eabi"   # Cortex-M4 and Cortex-M7 (no FPU)
 # target = "thumbv7em-none-eabihf" # Cortex-M4F and Cortex-M7F (with FPU)
 
 [alias]
-rb = "run --bin"
-rrb = "run --release --bin"
+rb = "run  -p assignments --bin"
+rrb = "run  -p assignments --release --bin"
 gdb = "run -p assignments --bin"
 gdbserver = "embed --chip nRF52840 -p assignments --bin"
