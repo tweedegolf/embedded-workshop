@@ -4,6 +4,6 @@
 ### Useful for
 - Blinking LEDS
 - Reading button state
-- Just about anything
+- Just about anything related to I/O
 
 **Questions so far?**

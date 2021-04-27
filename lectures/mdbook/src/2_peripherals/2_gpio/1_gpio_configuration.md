@@ -1,6 +1,5 @@
-# GPIO configuration
+# GPIO Configuration parameters
 
-## Configuration parameters
 - Input or output mode
 - Several input and output 'submodes'
 - Disconnected by default

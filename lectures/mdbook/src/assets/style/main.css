@@ -7,3 +7,12 @@
     display: block;
     margin: 0 auto;
 }
+
+.content img.img-right {
+    position: absolute;
+    right: 5%;
+}
+
+.content img.img-overlay {
+    z-index: 99;
+}

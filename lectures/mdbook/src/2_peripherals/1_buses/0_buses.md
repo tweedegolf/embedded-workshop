@@ -1,6 +1,6 @@
 # Core, busses, and peripherals
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/ARMSoCBlockDiagram.svg/600px-ARMSoCBlockDiagram.svg.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/ARMSoCBlockDiagram.svg/600px-ARMSoCBlockDiagram.svg.png" class="img-right img-overlay" />
 
 - Cortex-M core
 - Advanced High-performance Bus (AHB)
