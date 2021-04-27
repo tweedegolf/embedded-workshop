@@ -11,6 +11,10 @@ cortex-m-rt = "0.6.13"
 defmt = "0.2.0"
 defmt-rtt = "0.2.0"
 panic-probe = { version = "0.2.0", features = ["print-defmt"] }
+ssd1306 = "0.5.1"
+embedded-graphics = "0.6.2"
+lis3dh = "0.3.0"
+accelerometer = "~0.12"
 
 [dependencies.nrf52840-hal]
 version = "0.12.1"
@@ -34,3 +38,7 @@ defmt-error = []
 [[bin]]
 name = "blinky"
 path = "blinky/main.rs"
+
+[[bin]]
+name = "peripherals"
+path = "peripherals/main.rs"

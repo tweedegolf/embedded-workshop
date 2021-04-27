@@ -53,6 +53,7 @@
     - [`embedded_hal`](./2_peripherals/8_embedded_hal/0_embedded_hal.md)
         - [Example driver](./2_peripherals/8_embedded_hal/1_example_driver.md)
         - [Example driver usage](./2_peripherals/8_embedded_hal/2_driver_usage.md)
+    - [Assignment](./2_peripherals/assignment.md)
 - [Debugging and analysis]()
 - [Interrupts]()
 - [Memory layout]()
