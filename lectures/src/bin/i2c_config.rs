@@ -49,7 +49,7 @@ fn start() -> ! {
     let message_flash: &'static [u8; 4] = b"Rust";
     let message_ram = *message_flash; // Copy to RAM
 
-    // Write some data, automatically toggling the CS pin.
+    // Write some data to a slave with address 0x18
     i2c.write(0x18, &message_ram).unwrap();
 
     loop {
