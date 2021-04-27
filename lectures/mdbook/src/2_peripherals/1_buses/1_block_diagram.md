@@ -1,6 +1,6 @@
-# nRF52840 block diagram
+<img src="https://infocenter.nordicsemi.com/topic/ps_nrf52840/chapters/blockdiagram/doc/image/block.nrf52840.svg" width="40%" class="img-overlay img-right">
 
-![](https://infocenter.nordicsemi.com/topic/ps_nrf52840/chapters/blockdiagram/doc/image/block.nrf52840.svg)
+# nRF52840 block diagram
 
 - Core connected to AHB
 - AHB to APB bridge
