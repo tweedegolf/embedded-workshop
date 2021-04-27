@@ -3,8 +3,8 @@
 #![no_main]
 
 // ANCHOR: hal_pac_import
-use nrf52840_hal as hal;
 use hal::pac;
+use nrf52840_hal as hal;
 // ANCHOR_END: hal_pac_import
 
 // ANCHOR: prelude

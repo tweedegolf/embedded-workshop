@@ -37,7 +37,7 @@ fn start() -> ! {
     // Initialize TIMER0 as a periodic timer
     let mut timer0 = hal::timer::Timer::periodic(peripherals.TIMER0);
 
-    // Set TIMER0 interval to 500ms 
+    // Set TIMER0 interval to 500ms
     let delay_us = 500_000u32; // 500 milliseconds
     timer0.start(delay_us);
 

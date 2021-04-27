@@ -27,7 +27,7 @@ fn start() -> ! {
     // ANCHOR_END: peripheral_init
 
     // ANCHOR: init
-    use hal::uarte::{Pins, Baudrate, Parity};
+    use hal::uarte::{Baudrate, Parity, Pins};
 
     // Initialize port0
     let port0 = hal::gpio::p0::Parts::new(peripherals.P0);
@@ -36,19 +36,27 @@ fn start() -> ! {
     let rxd = port0.p0_30.into_floating_input().degrade();
 
     // Transmitting pin, initialize as output
-    let txd = port0.p0_31.into_push_pull_output(hal::gpio::Level::Low).degrade();
+    let txd = port0
+        .p0_31
+        .into_push_pull_output(hal::gpio::Level::Low)
+        .degrade();
 
     // Create Pins struct to pass to Uarte
     let uart_pins = Pins {
         rxd,
         txd,
         // We don't use this stuff
-        cts: None,  // Clear to send pin
+        cts: None, // Clear to send pin
         rts: None, // Request to send pin
     };
 
     // Initialize UART peripheral with standard configuration
-    let mut uart = hal::Uarte::new(peripherals.UARTE0, uart_pins, Parity::EXCLUDED, Baudrate::BAUD115200);
+    let mut uart = hal::Uarte::new(
+        peripherals.UARTE0,
+        uart_pins,
+        Parity::EXCLUDED,
+        Baudrate::BAUD115200,
+    );
 
     // `Uarte` implements `core::fmt::Write`, which makes writing to it very easy
     use core::fmt::Write;

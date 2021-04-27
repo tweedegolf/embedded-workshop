@@ -1,14 +1,14 @@
 #![no_std]
 #![no_main]
 
-use nrf52840_hal as hal;
 use hal::pac;
+use nrf52840_hal as hal;
 
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
 
 use core::panic::PanicInfo;
-use cortex_m_rt::{entry};
+use cortex_m_rt::entry;
 
 // Contains definitions needed for defmt,
 // so we can print messages.

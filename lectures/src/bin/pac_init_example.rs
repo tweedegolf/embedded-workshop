@@ -23,7 +23,7 @@ fn start() -> ! {
 
     // Get a handle to GPIO port P0
     let port_p0 = peripherals.P0;
-    
+
     // Set output level to low
     port_p0.outclr.write(|w| w.pin13().set_bit());
 

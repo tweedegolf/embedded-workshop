@@ -1,20 +1,19 @@
 #![no_std]
 #![no_main]
 
+use hal::pac;
 use nrf52840_hal as hal;
-use hal::pac ;
 
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
 
 use core::panic::PanicInfo;
-use cortex_m_rt::{entry};
+use cortex_m_rt::entry;
 
 // Contains definitions needed for defmt,
 // so we can print messages.
 // Also contains a panic handler,
 // so we don't need to add it here anymore
-
 
 struct Data {
     x: u32,
@@ -32,7 +31,7 @@ fn start() -> ! {
     };
 
     let f = &d;
-    
+
     loop {
         x += 1;
         // TODO
