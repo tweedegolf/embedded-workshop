@@ -1,8 +1,3 @@
 # I2C timing
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/I2C_data_transfer.svg" width="70%"/>
-
-
-
-- Start condition
-- 
+<a href="../../assets/images/i2c-timing.png"><img src="../../assets/images/i2c-timing.png" width="100%" /></a>

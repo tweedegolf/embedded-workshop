@@ -1,3 +1,3 @@
 # SPI timing
 
-<img src="../../assets/images/spi-timing.png" width="100%" />
+<a href="../../assets/images/spi-timing.png"><img src="../../assets/images/spi-timing.png" width="100%" /></a>
