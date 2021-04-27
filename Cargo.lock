@@ -182,6 +182,7 @@ dependencies = [
  "cortex-m-rt",
  "defmt",
  "defmt-rtt",
+ "embedded-hal",
  "nrf52840-hal",
  "panic-probe",
 ]

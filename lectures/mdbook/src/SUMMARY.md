@@ -51,6 +51,8 @@
         - [`Peripherals::take()`](./2_peripherals/7_ownership/1_peripherals_take.md)
         - [HAL abstractions](./2_peripherals/7_ownership/2_hal_abstractions.md)
     - [`embedded_hal`](./2_peripherals/8_embedded_hal/0_embedded_hal.md)
+        - [Example driver](./2_peripherals/8_embedded_hal/1_example_driver.md)
+        - [Example driver usage](./2_peripherals/8_embedded_hal/2_driver_usage.md)
 - [Debugging and analysis]()
 - [Interrupts]()
 - [Memory layout]()
