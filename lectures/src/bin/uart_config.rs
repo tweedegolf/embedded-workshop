@@ -39,7 +39,7 @@ fn start() -> ! {
     let txd = port0
         .p0_31
         .into_push_pull_output(hal::gpio::Level::Low)
-        .degrade();
+        .degrade(); // Erase the type, creating a generic pin
 
     // Create Pins struct to pass to Uarte
     let uart_pins = Pins {
@@ -63,8 +63,8 @@ fn start() -> ! {
     // `Uarte` implements `core::fmt::Write`, which makes writing to it very easy
     use core::fmt::Write;
     write!(uart, "Rust").unwrap();
+    // ANCHOR_END: init
     loop {
         // Do nothing
     }
-    // ANCHOR_END: init
 }

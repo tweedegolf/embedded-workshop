@@ -45,6 +45,8 @@ disp.init().unwrap(); // Don;t forget!
 | A2         | -              |
 | A3         | -              |
 
+- Initialize the SCL and SDA pins. Due to some [peculiarities](https://github.com/nrf-rs/nrf-hal/blob/master/nrf-hal-common/src/twim.rs#L45) of the nRF52840, they need to be in floating input mode.
+
 - Initialize the TWIM0 peripheral, which is I2C compatible. Use the [I2C example](./6_i2c/2_example.md) for reference.
 
 - Set up the `lis3dh` driver:
@@ -53,7 +55,6 @@ let mut lis3dh = Lis3dh::new(i2c, SlaveAddr::Default).unwrap();
 ```
 
 - Read a sample and log it using `dfmt::info!(..)`. Reading a normalized sample is done though the [`Accelerometer` trait](https://docs.rs/accelerometer/0.12.0/accelerometer/trait.Accelerometer.html), which `Lis3dh` implements.
-
 
 ## Show an image on the display
 - Use and adapt the [image example](https://github.com/jamwaffles/ssd1306/blob/master/examples/image_i2c.rs) to show the Rust logo on the display. Or, perhaps another image of your liking?

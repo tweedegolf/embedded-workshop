@@ -85,7 +85,7 @@ Configure fall detection IRQ on lis3dh, catch it using EXTI, read out data
 - How to configure interrupts using the HAL
 
 ### Voorbereiden
-- Read up on L476 interrupts (4h)
+- Read up on nrF52840 interrupts (4h)
 - Slides + story (4h)
 - RTIC-based project set up (2h)
 - Bare-metal project set up (2h)

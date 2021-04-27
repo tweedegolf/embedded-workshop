@@ -8,4 +8,4 @@
 - conflicting configuration
 - data races
 
-`svd2rust` solves this using Rusts ownership model
+*`svd2rust` solves this using Rusts ownership model!*

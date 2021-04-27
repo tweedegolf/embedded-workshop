@@ -74,9 +74,8 @@ fn start() -> ! {
 
     // Write some data, automatically toggling the CS pin.
     spi.write(&mut not_chip_sel, &message_ram).unwrap();
-
+    // ANCHOR_END: init
     loop {
         // Do nothing
     }
-    // ANCHOR_END: init
 }
