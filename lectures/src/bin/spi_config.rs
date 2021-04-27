@@ -56,7 +56,16 @@ fn start() -> ! {
         phase: Phase::CaptureOnFirstTransition,
     };
 
-    let mut spi = hal::Spim::new(peripherals.SPIM0, spi_pins, Frequency::K500, spi_mode, 0);
+    // Initialize SPIM peripheral with 500 khz clock frequency
+    // ANCHOR: spim_init
+    let mut spi = hal::Spim::new(
+        peripherals.SPIM0, // Take peripheral handle by value
+        spi_pins, // Take pins by value
+        Frequency::K500,
+        spi_mode,
+        0,
+    );
+    // ANCHOR_END: spim_init
 
     // On our nRF52840, SPI uses DMA, which is why we have to copy
     // the message from flash to RAM.

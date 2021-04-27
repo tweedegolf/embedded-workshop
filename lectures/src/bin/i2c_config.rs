@@ -42,7 +42,13 @@ fn start() -> ! {
     let i2c_pins = Pins { scl, sda };
 
     // TWIM stands for Two-Wire Interface Master, and it is compatible with I2C
-    let mut i2c = hal::Twim::new(peripherals.TWIM0, i2c_pins, Frequency::K400);
+    // ANCHOR: twim_init
+    let mut i2c = hal::Twim::new(
+        peripherals.TWIM0, // Take peripheral handle by value
+        i2c_pins, // Take pins by value
+        Frequency::K400,
+    );
+    // ANCHOR_END: twim_init
 
     // On our nRF52840, I2C uses DMA, which is why we have to copy
     // the message from flash to RAM.

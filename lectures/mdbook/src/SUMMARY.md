@@ -47,8 +47,10 @@
     - [Inter-integrated circuit (I2C)](./2_peripherals/6_i2c/0_i2c.md)
         - [I2C timing](./2_peripherals/6_i2c/1_i2c_timing.md)
         - [I2C example](./2_peripherals/6_i2c/2_example.md)
-
-
+    - [Peripheral ownership](./2_peripherals/7_ownership/0_ownership.md)
+        - [`Peripherals::take()`](./2_peripherals/7_ownership/1_peripherals_take.md)
+        - [HAL abstractions](./2_peripherals/7_ownership/2_hal_abstractions.md)
+    - [`embedded_hal`](./2_peripherals/8_embedded_hal/0_embedded_hal.md)
 - [Debugging and analysis]()
 - [Interrupts]()
 - [Memory layout]()

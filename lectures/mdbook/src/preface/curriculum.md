@@ -31,7 +31,6 @@ Blinky with button
 - SPI
 - I2C
 - UART
-- RTC
 - Timers
 - Rust ownership and peripherals
 - embedded-hal

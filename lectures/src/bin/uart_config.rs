@@ -51,12 +51,14 @@ fn start() -> ! {
     };
 
     // Initialize UART peripheral with standard configuration
+    // ANCHOR: uarte_init
     let mut uart = hal::Uarte::new(
-        peripherals.UARTE0,
-        uart_pins,
+        peripherals.UARTE0, // Take peripheral handle by value
+        uart_pins, // Take pins by value
         Parity::EXCLUDED,
         Baudrate::BAUD115200,
     );
+    // ANCHOR_END: uarte_init
 
     // `Uarte` implements `core::fmt::Write`, which makes writing to it very easy
     use core::fmt::Write;
