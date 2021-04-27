@@ -30,6 +30,8 @@
     - [Core, busses, and peripherals](./2_peripherals/1_buses/0_buses.md)
         - [nRF52840 block diagram](./2_peripherals/1_buses/1_block_diagram.md)
     - [General Purpose Input/Output (GPIO)](./2_peripherals/2_gpio/0_gpio.md)
+        - [GPIO configuration](./2_peripherals/2_gpio/1_gpio_configuration.md)
+        - [GPIO applications](./2_peripherals/2_gpio/2_gpio_applications.md)
     - [Timers/counters (TIMER)](./2_peripherals/3_timer/0_timer.md)
         - [Timer mode](./2_peripherals/3_timer/1_timer_mode.md)
         - [Counter mode](./2_peripherals/3_timer/2_counter_mode.md)
