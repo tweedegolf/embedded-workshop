@@ -31,6 +31,18 @@ Install the `thumbv7em-none-eabi` toolchain with the following command:
 rustup target add thumbv7em-none-eabi
 ```
 
+For the rest of the steps, you'll need the [source code of this workshop](https://github.com/tweedegolf/embedded-workshop).
+
+```bash
+git clone git@github.com:tweedegolf/embedded-workshop.git
+cd embeddded-workshop
+```
+Or, if you like to use HTTPS instead:
+```bash
+git clone https://github.com/tweedegolf/embedded-workshop.git
+cd embeddded-workshop
+```
+
 Then, we'll install some tools needed to flash the mcu and inspect the code:
 ```bash
 cargo install --force flip-link cargo-binutils cargo-flash cargo-embed probe-run
