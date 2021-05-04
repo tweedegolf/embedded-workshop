@@ -53,11 +53,6 @@ sudo apt install gdb-multiarch
 ```
 
 ## Testing
-Please make sure you are able to build the project, even if no hardware is connected yet:
-```bash
-cargo build
-```
-
 To test the hardware, please connect the nucleo board to your pc and run
 ```bash
 cargo run --release -p examples --bin test
