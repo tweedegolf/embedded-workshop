@@ -14,7 +14,7 @@ use cortex_m_rt::entry;
 // so we can print messages.
 // Also contains a panic handler,
 // so we don't need to add it here anymore
-use assignments as _;
+use assignments::{self as _, exit};
 
 #[entry]
 fn start() -> ! {
@@ -24,7 +24,5 @@ fn start() -> ! {
     // Initialize button pun as input
 
     defmt::info!("Hello, world");
-    loop {
-        // TODO Read input pin state, checking if button was pressed
-    }
+    exit();
 }
