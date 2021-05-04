@@ -65,11 +65,7 @@ cargo run --release -p examples --bin test
 
 If everything works correctly, you should now see the board LEDs flashing, as well as some console output. If not, don't worry and contact Henk Dieter: [henkdieter@tweedegolf.com](mailto:henkdieter@tweedegolf.com).
 
-To test your environment, please run
-```bash
-cargo run --release -p assignments --bin blinky
-```
-You should see a message 'Hello, World!' in your terminal, as well as a stack backtrace and more output. Press button 1 to complete the test.
+Press button 1 to complete the test.
 
 ## Docs
 Datasheets, manuals, and schematics of the parts we are using in this workshop.
