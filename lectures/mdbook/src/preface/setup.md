@@ -79,7 +79,7 @@ Datasheets, manuals, and schematics of the parts we are using in this workshop.
 
 ### SSD1306
 - [Datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf)
-- [Schematic](https://cdn-learn.adafruit.com/assets/assets/000/093/884/original/adafruit_products_0-96in_OLED_sch.png? 1596746114) Pin labels differ a bit, but the same set of pins is available.
+- [Schematic](https://cdn-learn.adafruit.com/assets/assets/000/093/884/original/adafruit_products_0-96in_OLED_sch.png?1596746114) Pin labels differ a bit, but the same set of pins is available.
 
 ### LIS3DH
 - [Datsheet](https://cdn-learn.adafruit.com/assets/assets/000/085/846/original/lis3dh.pdf?1576396666)
