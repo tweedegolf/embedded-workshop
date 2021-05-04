@@ -1,7 +1,8 @@
 # Summary
 
-[Prerequisites](./preface/prerequisites.md)
+[Introduction](./preface/introduction.md)
 [Course overview](./preface/curriculum.md)
+[Setting up](./preface/setup.md)
 
 - [Anatony of a Rust embedded application](./1_anatomy/0_summary.md)
     - [Constraints](./1_anatomy/1_constraints.md)

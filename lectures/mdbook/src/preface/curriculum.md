@@ -1,5 +1,7 @@
-# Curriculum
+<div class="read">
 
+# Curriculum
+Below you'll find an overview of the learning outcomes of each of the workshops.
 ## 1 Anatomy of a Rust Embedded application (0,5d)
 ### Subjects
 - Constraints of no_std environment.
@@ -19,14 +21,8 @@ Blinky with button
 - Purpose of cortex-m and cortex-m-rt
 - Setting up a dev env with probe-rs
 - Debugging with GDB
-- First intuitions on the implications of optimization
 
-### Preparation
-- Slides + story - (6h)
-- Project set up (1h)
-- Prepare GDB configuration (2h)
-
-## 2 Peripherals (1d)
+## 2 Peripherals
 ### Subjects
 - SPI
 - I2C
@@ -45,12 +41,7 @@ Read out lis3dh using I2C, show data on SSD1306 using SPI
 - Why the Rust ownership model and peripherals are great together
 - How to write platform independent device drivers using `embedded-hal`
 
-### Preparation
-- Read up on peripherals L476 (4h)
-- Slides + story (6h)
-- Project set up (2h)
-
-## 3 Debugging and analysis (0.5d)
+## 3 Debugging and analysis (live only)
 - Saleae Logic analyzer
 - Power optimization With Otii arc
 
@@ -62,10 +53,7 @@ Debug and optimize an SPI/I2C driver
 - How to analyze usung an Otii Arc?
 - How to optimize for power usage?
 
-### Preparation
-- Project set up (2h)
-
-## 4 Interrupts (1d)
+## 4 Interrupts
 ### Subjects
 - cortex-m-rt
 - NVIC
@@ -84,13 +72,7 @@ Configure fall detection IRQ on lis3dh, catch it using EXTI, read out data
 - How to configure interrupts using RTIC
 - How to configure interrupts using the HAL
 
-### Voorbereiden
-- Read up on nrF52840 interrupts (4h)
-- Slides + story (4h)
-- RTIC-based project set up (2h)
-- Bare-metal project set up (2h)
-
-## 5 Memory layout (1d)
+## 5 Memory layout
 - Types of memory
 - Memory map
 - MPU
@@ -107,7 +89,7 @@ Write a simple bootloader
 - What's the purpose of an MPU
 - How to configure where your code is flashed in memory and how to manipulate stack position and such using a linker script
 
-## 6 Exceptions (bonus) (0.5d)
+## 6 Exceptions (bonus)
 - HardFault/UsageFault/MemManage/BusFault
 
 ### Assignment
@@ -118,10 +100,4 @@ Debug a couple of HardFaults using GDB
 - Which exception is thrown when?
 - How to debug an exception
 
-### Voorbereiden
-- Read up on Cortex-M exceptions (4h)
-- Slides + story (4h)
-- Project set up (2h)
-
-
-
+</div>

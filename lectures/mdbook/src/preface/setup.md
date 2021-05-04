@@ -1,6 +1,8 @@
-# Introduction
-Hello and welcome to Tweede golf's Embedded Rust Workshop! In this workshop, we'll get you started on writing your own embedded software using Rust. Before we begin, though, you'll need to check your parts, install some software, and verify that everything works the way it should.
-# Required hardware
+<div class="read">
+
+# Setting up your environment
+Before we begin, though, you'll need to check your parts, install some software, and verify that everything works the way it should.
+## Hardware
 You should have received the following parts:
 
 - nRF52840-DK
@@ -82,3 +84,4 @@ Datasheets, manuals, and schematics of the parts we are using in this workshop.
 ### LIS3DH
 - [Datsheet](https://cdn-learn.adafruit.com/assets/assets/000/085/846/original/lis3dh.pdf?1576396666)
 - [Schematic](https://cdn-learn.adafruit.com/assets/assets/000/028/587/original/sensors_sch.png?1447888851)
+</div>

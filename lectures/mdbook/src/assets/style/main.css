@@ -16,3 +16,7 @@
 .content img.img-overlay {
     z-index: 99;
 }
+
+.content main .read {
+    font-size: 1.6rem;
+}
