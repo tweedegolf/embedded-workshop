@@ -1,4 +1,8 @@
 # Example use
+Run cargo-embed in background:
+```bash
+$ cargo embed --chip nRF52840 -p examples --bin gdb_demo
+```
 
 ```rust
 struct Data {
@@ -28,3 +32,5 @@ $3 = gdb_demo::Data {
 (gdb) print f.z
 $4 = core::option::Option<u8>::Some(123)
 ```
+
+**Questions so far?**

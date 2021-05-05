@@ -9,7 +9,10 @@ use cortex_m_rt::entry;
 
 #[entry]
 fn start() -> ! {
-    loop {}
+    // Init code goes here
+    loop {
+        // Main application code goes here
+    }
 }
 // ANCHOR_END: entry
 

@@ -1,20 +1,7 @@
 # Peripheral Access Crates (PACs)
 
-- Provides a type safe API to access device configuration registers
-- Models device's subsystems (peripherals) as singletons
-```rust,noplaypen
-{{#rustdoc_include ../../../../src/bin/pac_init_example.rs:peripheral_init}}
-```
-- Defines read-only, write-only, and read-write proxies to registers
 ```rust,noplaypen
 {{#rustdoc_include ../../../../src/bin/pac_init_example.rs:pin_init_pac}}
 ```
 
 Using the PAC looks scary, though!
-
-- Generated using [`svd2rust`](https://docs.rs/svd2rust)
-
-- Typically re-exported by HAL
-```rust,noplaypen
-{{#rustdoc_include ../../../../src/bin/pac_init_example.rs:pac_import}}
-```

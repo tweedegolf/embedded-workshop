@@ -1,4 +1,9 @@
+<div class="read">
+
 # Assignment 1
+
+## Checkout project
+`https://github.com/tweedegolf/embedded-workshop`
 
 ## Flash the board
 - Install the [required software](./) and flash the blinky application to your board. 
@@ -53,3 +58,5 @@ From the [documentation](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug
 | BTN4 | P0.25    |
 
 *Tip: look up the nrf-hal examples*
+
+</div>

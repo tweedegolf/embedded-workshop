@@ -3,8 +3,8 @@
 #![no_main]
 
 // ANCHOR: hal_pac_import
-use hal::pac;
 use nrf52840_hal as hal;
+use hal::pac;
 // ANCHOR_END: hal_pac_import
 
 // ANCHOR: prelude
@@ -18,9 +18,6 @@ use cortex_m_rt::entry;
 #[entry]
 fn start() -> ! {
     // ANCHOR: peripheral_init
-    // Get a handle to the Cortex-M common peripherals
-    let _core_peripherals = pac::CorePeripherals::take().unwrap();
-
     // Get a handle to the nRF52840 device peripherals
     let peripherals = pac::Peripherals::take().unwrap();
     // ANCHOR_END: peripheral_init

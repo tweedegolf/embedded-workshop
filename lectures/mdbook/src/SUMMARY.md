@@ -6,10 +6,10 @@
 
 - [Anatony of a Rust embedded application](./1_anatomy/0_summary.md)
     - [Setting up a project](./1_anatomy/1_setup.md)
-    - [Contents of a Rust embedded development environment](./1_anatomy/2_dev_env/0_dev_env.md)
-        - [Cargo configuration](./1_anatomy/2_dev_env/1_cargo_configuration.md)
+    - [Contents of a Rust embedded development environment](./1_anatomy/2_dev_env.md)
+        <!-- - [Cargo configuration](./1_anatomy/2_dev_env/1_cargo_configuration.md)
         - [Probe-rs definitions](./1_anatomy/2_dev_env/2_probe-rs_definitions.md)
-        - [Linker script](./1_anatomy/2_dev_env/3_linker_script.md)
+        - [Linker script](./1_anatomy/2_dev_env/3_linker_script.md) -->
     - [Structure](./1_anatomy/3_structure/0_structure.md)
         - [#!\[no_std\] and #!\[no_main\]](./1_anatomy/3_structure/1_attrs.md)
         - [Entry](./1_anatomy/3_structure/2_entry.md)
@@ -21,11 +21,10 @@
         - [A typical embedded Rust program](./1_anatomy/4_hal_pac/3_typical_program.md)
   
     - [Debugging with GDB](./1_anatomy/5_gdb_debug/0_gdb_debug.md)
-        - [Cargo Embed](./1_anatomy/5_gdb_debug/1_cargo_embed.md)
         - [GDB](./1_anatomy/5_gdb_debug/2_gdb.md)
         - [GDB commands](./1_anatomy/5_gdb_debug/3_gdb_commands.md)
         - [GDB example](./1_anatomy/5_gdb_debug/4_gdb_example.md)
-    - [Finishing project setup](./1_anatomy/6_setup_finish.md)
+    - [Questions](./1_anatomy/6_questions.md)
     - [Assignment](./1_anatomy/assignment.md)
 
 - [Peripherals](./2_peripherals/0_summary.md)
