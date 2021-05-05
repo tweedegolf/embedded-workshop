@@ -1,10 +1,9 @@
 # Anatony of a Rust embedded application
 
-## Learning outcomes
-- Constraints of programming without an OS
-- Structure of embedded Rust applications
-- Purpose of crates `cortex-m` and `cortex-m-rt`
-- What HALs and PACs are, and how they are related
-- Setting up a development environment
-- Debugging with GDB
-- First intuitions on the implications of optimization
+## You'll be able to:
+- Set up a Rust embedded development environment
+- Debug an embedded Rust application
+- Find your way around the Rust embedded ecosystem
+- Get the LED's on your devboard working
+- Read buttons
+- Create a cool game
