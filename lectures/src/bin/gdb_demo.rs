@@ -1,5 +1,6 @@
 #![no_std]
 #![no_main]
+#![allow(dead_code)]
 
 use hal::pac;
 use nrf52840_hal as hal;

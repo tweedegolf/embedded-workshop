@@ -29,7 +29,8 @@ fn start() -> ! {
     // Initialize port0
     let port0 = hal::gpio::p0::Parts::new(peripherals.P0);
 
-    // Initialize pin p0.13 as push-pull output, and set it to high state
+    // Initialize pin p0.13 as push-pull output, and set it to low state,
+    // therefore turning LED 1 on
     let _led_1_pin = port0.p0_13.into_push_pull_output(hal::gpio::Level::Low);
     // ANCHOR_END: pin_init_hal
 

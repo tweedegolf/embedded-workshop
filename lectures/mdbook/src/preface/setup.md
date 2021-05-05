@@ -1,7 +1,7 @@
 <div class="read">
 
 # Setting up your environment
-Before we begin, though, you'll need to check your parts, install some software, and verify that everything works the way it should.
+Before we begin, you'll need to check your parts, install some software, and verify that everything works the way it should.
 ## Hardware
 You should have received the following parts:
 
@@ -13,7 +13,7 @@ You should have received the following parts:
 
 You'll also need a Micro-USB cable, but I'm sure you've got one to spare.
 
-Please check that everything is complete. If not, please contact Henk Dieter: [henkdieter@tweedegolf.com](mailto:henkdieter@tweedegolf.com).
+Please check that everything is complete. If not, please contact us.
 
 ## Software
 Next, we'll need the software needed to build and flash the firware we're going to create.
@@ -70,7 +70,7 @@ To test the hardware, please connect the nucleo board to your pc and run
 cargo run --release -p examples --bin test
 ```
 
-If everything works correctly, you should now see the board LEDs flashing, as well as some console output. If not, don't worry and contact Henk Dieter: [henkdieter@tweedegolf.com](mailto:henkdieter@tweedegolf.com).
+If everything works correctly, you should now see the board LEDs flashing, as well as some console output. If not, don't worry and contact us.
 
 Press button 1 to complete the test.
 

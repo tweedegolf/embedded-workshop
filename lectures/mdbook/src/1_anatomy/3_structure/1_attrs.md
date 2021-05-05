@@ -5,4 +5,9 @@
 ```
 
 - **`#![no_std]`** Disables linking to `std`. We can use `core`, a subset of `std`
-- **`#![no_main]`** Disables injecting a 'main shim', for loading environment
+
+*Question: why can't we use `std`?*
+
+- **`#![no_main]`** Disables linking to standard main entry point.
+
+*Question: why can't we use `main`?*

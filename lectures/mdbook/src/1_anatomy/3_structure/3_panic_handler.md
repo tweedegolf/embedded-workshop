@@ -8,3 +8,6 @@
 
 - `#[panic_handler]` attribute
 - [PanicInfo](https://doc.rust-lang.org/core/panic/struct.PanicInfo.html) type
+    - payload
+    - message
+    - location
