@@ -15,6 +15,7 @@ ssd1306 = "0.5.1"
 embedded-graphics = "0.6.2"
 lis3dh = "0.3.0"
 accelerometer = "~0.12"
+embedded-hal = "0.2.4"
 
 [dependencies.nrf52840-hal]
 version = "0.12.1"
@@ -40,5 +41,9 @@ name = "blinky"
 path = "blinky/main.rs"
 
 [[bin]]
-name = "peripherals"
-path = "peripherals/main.rs"
+name = "peripherals-spi"
+path = "peripherals/main_spi.rs"
+
+[[bin]]
+name = "peripherals-i2c"
+path = "peripherals/main_i2c.rs"

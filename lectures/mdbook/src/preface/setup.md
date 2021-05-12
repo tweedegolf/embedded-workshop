@@ -77,7 +77,7 @@ As you can see in the image below, the rows on the breadboard labeled by a numbe
 An example of a correct placement of the components on the breadboard:
 <img src="/assets/images/breadboard-components.jpeg" width="20%"/>
 
-**Turn off your nRF52840DK**. Then, wire up the accelerometer, refering to the table below.
+**Turn off your nRF52840DK**. Then, wire up the accelerometer, referring to the table below.
 
 | LIS3DH Pin | nRF52840DK pin |
 |------------|----------------|
@@ -94,7 +94,6 @@ An example of a correct placement of the components on the breadboard:
 | A3         | -              |
 
 *We'll be using the other pins later on, but they're not needed to test the hardware*
-
 
 ### SSD1306 Display connection
 **Turn off your nRF52840DK**. Place the SSD1306 on your breadboard, taking care that the pins are not connected to each other. Then, wire it up using the table below:

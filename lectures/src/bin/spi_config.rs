@@ -50,11 +50,8 @@ fn start() -> ! {
         miso: Some(miso),
     };
 
-    // SPI mode. We could also use hal::spim::MODE_0 here.
-    let spi_mode = Mode {
-        polarity: Polarity::IdleLow,
-        phase: Phase::CaptureOnFirstTransition,
-    };
+    // SPI mode.
+    let spi_mode = hal::spim::MODE_0;
 
     // Initialize SPIM peripheral with 500 khz clock frequency
     // ANCHOR: spim_init
@@ -63,7 +60,7 @@ fn start() -> ! {
         spi_pins,          // Take pins by value
         Frequency::K500,
         spi_mode,
-        0,
+        0x55, // Over-read-character
     );
     // ANCHOR_END: spim_init
 

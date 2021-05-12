@@ -42,6 +42,7 @@ dependencies = [
  "defmt",
  "defmt-rtt",
  "embedded-graphics",
+ "embedded-hal",
  "lis3dh",
  "nrf52840-hal",
  "panic-probe",
