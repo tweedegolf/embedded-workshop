@@ -14,6 +14,6 @@
 
 - HAL abstractions take peripheral handles and pins by value
     - Only a single instance at a time
-- No conflicing configurations
+- No conflicting configurations
 
 **Questions so far?**

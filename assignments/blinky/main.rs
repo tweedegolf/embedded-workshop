@@ -23,7 +23,7 @@ fn start() -> ! {
     // Initialize LED pin as output
     // Initialize button pun as input
 
-    // Be sure to check out `assignments::utils::delay_millis()`, 
+    // Be sure to check out `assignments::utils::delay_millis()`,
     // it may come in handy for this assignment
     defmt::info!("Hello, world");
     exit();

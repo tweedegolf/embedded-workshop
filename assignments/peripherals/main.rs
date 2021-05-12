@@ -14,9 +14,9 @@ use hal::gpio::Level;
 use hal::spim::{Frequency as SpimFrequency, Mode, Phase, Pins as SpimPins, Polarity};
 use hal::twim::{Frequency as TwimFrequency, Pins as TwimPins};
 
+use accelerometer::Accelerometer;
 use lis3dh::{Lis3dh, SlaveAddr};
 use ssd1306::{prelude::*, Builder};
-use accelerometer::Accelerometer;
 
 use cortex_m_rt::entry;
 
@@ -27,15 +27,15 @@ fn start() -> ! {
     // Get a handle to the nRF52840 device peripherals
     let peripherals = pac::Peripherals::take().unwrap();
 
-    // Initialize port1
-   
+    // Initialize port0 and port1
+
     // Initialize pins
 
     // Initialize peripherals
-    
+
     // Initialize drivers
-    
+
     loop {
-        // Cool stuff    
+        // Cool stuff
     }
 }
