@@ -55,7 +55,7 @@
     - [`embedded_hal`](./2_peripherals/8_embedded_hal/0_embedded_hal.md)
         - [Example driver](./2_peripherals/8_embedded_hal/1_example_driver.md)
         - [Example driver usage](./2_peripherals/8_embedded_hal/2_driver_usage.md)
-    - [Writing a driver in Rust](./2_peripherals/9_driver/0_driver.md)
+    - [Reading a datasheet](./2_peripherals/9_datasheets/0_datasheets.md)
     - [Assignment](./2_peripherals/assignment.md)
 - [Debugging and analysis]()
 - [Interrupts]()
