@@ -5,8 +5,8 @@ If you're here for the workshop, please navigate to the [outline](./lectures/mdb
 
 To run locally:
 ```bash
-$ cargo install mdbook --version 0.4.7
-$ mdbook serve
+cargo install mdbook --version 0.4.7
+mdbook serve
 ```
 
 Open [localhost:3000](http://localhost:3000) to view the content.

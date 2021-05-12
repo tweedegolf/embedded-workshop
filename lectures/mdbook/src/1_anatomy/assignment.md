@@ -3,17 +3,18 @@
 # Assignment 1
 
 ## Checkout project
-`https://github.com/tweedegolf/embedded-workshop`
+Check out the workshop project
+[https://github.com/tweedegolf/embedded-workshop](https://github.com/tweedegolf/embedded-workshop)
 
 ## Flash the board
-- Install the [required software](./) and flash the blinky application to your board. 
+- Install the [required software](/preface/setup.md) and flash the blinky application to your board. 
 
 ```bash
-$ cargo run -p assignments --bin blinky
+cargo run -p assignments --bin blinky
 ```
 Or, using an alias:
 ```bash
-$ cargo rb blinky
+cargo rb blinky
 ```
 
 You should get an output like this:

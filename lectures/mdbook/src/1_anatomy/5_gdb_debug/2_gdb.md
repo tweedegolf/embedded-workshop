@@ -15,5 +15,5 @@ runner = "gdb-multiarch -x cargo-embed.cfg"
 ```
 Then after setting up your preferred GDB server, just run
 ```bash
-$ cargo run -p examples --bin gdb_demo
+cargo run -p examples --bin gdb_demo
 ```

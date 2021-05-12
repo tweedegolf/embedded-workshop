@@ -60,3 +60,4 @@
 
 [Embed.toml](./includes/Embed.toml.md)
 [cargo-embed.gdb](./includes/cargo-embed.gdb.md)
+[memory.x](./includes/memory.x.md)

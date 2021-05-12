@@ -1,7 +1,12 @@
 # Example use
 Run cargo-embed in background:
 ```bash
-$ cargo embed --chip nRF52840 -p examples --bin gdb_demo
+cargo embed --chip nRF52840 -p examples --bin gdb_demo
+```
+
+Run gdb:
+```bash
+cargo run -p examples --bin gdb_demo
 ```
 
 ```rust

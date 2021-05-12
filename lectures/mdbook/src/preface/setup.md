@@ -45,6 +45,7 @@ cd embedded-workshop
 
 Then, we'll install some tools needed to flash the mcu and inspect the code:
 ```bash
+sudo apt install -y libusb-1.0-0-dev libftdi1-dev
 cargo install --force flip-link cargo-binutils cargo-flash cargo-embed probe-run
 ```
 
