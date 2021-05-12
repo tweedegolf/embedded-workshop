@@ -4,7 +4,7 @@
 [Course overview](./preface/curriculum.md)
 [Setting up](./preface/setup.md)
 
-- [Anatony of a Rust embedded application](./1_anatomy/0_summary.md)
+- [Anatomy of a Rust embedded application](./1_anatomy/0_summary.md)
     - [Setting up a project](./1_anatomy/1_setup.md)
     - [Contents of a Rust embedded development environment](./1_anatomy/2_dev_env.md)
     - [Structure](./1_anatomy/3_structure/0_structure.md)
@@ -15,9 +15,9 @@
     - [HALs and PACs](./1_anatomy/4_hal_pac/0_hal_pac.md)
         - [Peripherals](./1_anatomy/4_hal_pac/1_peripherals.md)
         - [Peripheral Access Crates (PACs)](./1_anatomy/4_hal_pac/2_pac.md)
-        - [Harware Abstraction Libraries (HALs)](./1_anatomy/4_hal_pac/3_hal.md)
+        - [Hardware Abstraction Libraries (HALs)](./1_anatomy/4_hal_pac/3_hal.md)
         - [A typical embedded Rust program](./1_anatomy/4_hal_pac/4_typical_program.md)
-  
+
     - [Debugging with GDB](./1_anatomy/5_gdb_debug/0_gdb_debug.md)
         - [GDB](./1_anatomy/5_gdb_debug/2_gdb.md)
         - [GDB commands](./1_anatomy/5_gdb_debug/3_gdb_commands.md)
