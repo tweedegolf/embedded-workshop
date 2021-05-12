@@ -66,14 +66,57 @@ sudo apt install gdb-multiarch
 ```
 
 ## Testing
-To test the hardware, please connect the nucleo board to your pc and run
+Before we begin, we need to test our hardware. We'll be testing the LIS3DH accelerometer, the SSD1306 display, as well as the nRF52840DK board. 
+
+### LIS3DH accelerometer connection
+First, let's wire up the LIS3DH accelerometer for I2C usage. Place it on your breadboard, with each row of pins on a separate side of the gutter.
+As you can see in the image below, the rows on the breadboard labeled by a number are connected. E.g. hole a1 is connected to hole b1 and c1, but not to a2 or a60. Also, both columns on the sides of the breadboards (with the blue (-) and red (+) lines) are connected. Please keep this in mind when wiring up the display and the accelerometer, as shorting the contacts might break your components.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Breadboard.png" width=50%/>
+
+**Turn off your nRF52840DK**. Then, wire up the accelerometer, refering to the table below.
+
+| LIS3DH Pin | nRF52840DK pin |
+|------------|----------------|
+| VCC        | VDD            |
+| 3vo        | -              |
+| GND        | GND            |
+| SCL        | P0.27          |
+| SDA        | P0.26          |
+| SDO        | -              |
+| CS'        | -              |
+| INT        | -              |
+| A1         | -              |
+| A2         | -              |
+| A3         | -              |
+
+*We'll be using the other pins later on, but they're not needed to test the hardware*
+
+
+### SSD1306 Display connection
+**Turn off your nRF52840DK**. Place the SSD1306 on your breadboard, taking care that the pins are not connected to each other. Then, wire it up using the table below:
+
+| SSD1306 pin | nRF52840DK pin |
+| ----------- | -------------- |
+| VCC (+)     | VDD            |
+| GND (-)     | GND            |
+| NC          | -              |
+| D0 (CLK)    | p1.07          |
+| D1 (DIN)    | p1.08          |
+| RES         | p1.04          |
+| DC (D/C)    | p1.05          |
+| CS          | p1.06          |
+
+***Verify once more that all pins have been correctly connected, and that they are not connected to each other***
+
+### Running the test
+
+To test the hardware, please connect the nrf board to your pc, turn it on, and run
 ```bash
 cargo run --release -p examples --bin test
 ```
 
-If everything works correctly, you should now see the board LEDs flashing, as well as some console output. If not, don't worry and contact us.
-
-Press button 1 to complete the test.
+If everything works correctly, you should now see the accelerometer samples being printed on the display. If not, don't worry and contact us.
 
 ## Docs
 Datasheets, manuals, and schematics of the parts we are using in this workshop.

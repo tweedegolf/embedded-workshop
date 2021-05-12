@@ -3,15 +3,15 @@
 ## Write a message to the screen
 - First, let's hook up the SSD1306 OLED screen. The best way is to do that using your breadboard. Connect it like this:
 
-| SSD1306 pin | nRF52840DK pin | Initial level |
-| ----------- | -------------- | ------------- |
-| VCC         | VDD            | -             |
-| GND         | GND            | -             |
-| D0 (SCK)    | p1.10          | Low           |
-| D1 (MOSI)   | p1.11          | Low           |
-| RES         | p1.12          | High          |
-| DC          | p1.13          | Low           |
-| CS (NCS)    | p1.14          | High          |
+| SSD1306 pin | nRF52840DK pin | Initial level | SPI pin |
+| ----------- | -------------- | ------------- | ------- |
+| VCC         | VDD            | -             |         |
+| GND         | GND            | -             |         |
+| D0 (CLK)    | p1.07          | Low           | SCK     |
+| D1 (DIN)    | p1.08          | Low           | MOSI    |
+| RES         | p1.04          | High          |         |
+| DC          | p1.05          | Low           |         |
+| CS          | p1.06          | High          | NCS     |
 
 - Then, you'll need to initialize the pins. All of the pins we're using to control the display, should be put in push-pull output mode, using `into_push_pull_output`. Refer to the previous table for the initial output levels, as well as to the [GPIO example](./2_gpio/1_gpio_configuration.md).
 
@@ -36,8 +36,8 @@ disp.init().unwrap(); // Don;t forget!
 | VCC        | VDD            |
 | 3vo        | -              |
 | GND        | GND            |
-| SCL        | P1.02          |
-| SDA        | P1.01          |
+| SCL        | P0.27         |
+| SDA        | P0.26          |
 | SDO        | -              |
 | CS'        | -              |
 | INT        | -              |
