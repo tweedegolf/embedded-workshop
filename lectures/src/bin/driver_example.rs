@@ -17,8 +17,8 @@ use examples as _;
 
 // ANCHOR: mod_cool_laser_machine
 mod cool_laser_machine {
+    use embedded_hal::blocking::spi::{Transfer, Write};
     use embedded_hal::digital::v2::OutputPin;
-    use embedded_hal::blocking::spi::{Write, Transfer};
 
     use core::marker::PhantomData;
 
@@ -33,8 +33,8 @@ mod cool_laser_machine {
     /// and for `NCS`s that are `OutputPin`
     impl<SPI, NCS, ESPI, ENCS> CoolLaserMachine<SPI, NCS>
     where
-        SPI: Write<u8, Error=ESPI> + Transfer<u8, Error=ESPI>,
-        NCS: OutputPin<Error=ENCS>,
+        SPI: Write<u8, Error = ESPI> + Transfer<u8, Error = ESPI>,
+        NCS: OutputPin<Error = ENCS>,
         ENCS: core::fmt::Debug, // Allows us to call `unwrap`, which is naughty
     {
         /// Instantiate a Cool Laser Machine, taking ownership
@@ -42,10 +42,7 @@ mod cool_laser_machine {
         pub fn new(spi: SPI, mut ncs: NCS) -> Self {
             // Ensure the NCS pin is set high
             ncs.set_high();
-            Self {
-                spi,
-                ncs
-            }
+            Self { spi, ncs }
         }
 
         /// Puts the LASER on
@@ -105,7 +102,7 @@ fn start() -> ! {
     let spi_pins = Pins {
         sck,
         mosi: Some(mosi),
-        miso: Some(miso),                    
+        miso: Some(miso),
     };
 
     // SPI mode. We could also use hal::spim::MODE_0 here.
@@ -118,7 +115,7 @@ fn start() -> ! {
     // ANCHOR: spim_init
     let mut spi = hal::Spim::new(
         peripherals.SPIM0, // Take peripheral handle by value
-        spi_pins, // Take pins by value
+        spi_pins,          // Take pins by value
         Frequency::K500,
         spi_mode,
         0,

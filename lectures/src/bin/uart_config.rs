@@ -54,7 +54,7 @@ fn start() -> ! {
     // ANCHOR: uarte_init
     let mut uart = hal::Uarte::new(
         peripherals.UARTE0, // Take peripheral handle by value
-        uart_pins, // Take pins by value
+        uart_pins,          // Take pins by value
         Parity::EXCLUDED,
         Baudrate::BAUD115200,
     );

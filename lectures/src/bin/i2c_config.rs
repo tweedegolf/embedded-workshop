@@ -45,7 +45,7 @@ fn start() -> ! {
     // ANCHOR: twim_init
     let mut i2c = hal::Twim::new(
         peripherals.TWIM0, // Take peripheral handle by value
-        i2c_pins, // Take pins by value
+        i2c_pins,          // Take pins by value
         Frequency::K400,
     );
     // ANCHOR_END: twim_init

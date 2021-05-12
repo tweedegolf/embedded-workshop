@@ -60,7 +60,7 @@ fn start() -> ! {
     // ANCHOR: spim_init
     let mut spi = hal::Spim::new(
         peripherals.SPIM0, // Take peripheral handle by value
-        spi_pins, // Take pins by value
+        spi_pins,          // Take pins by value
         Frequency::K500,
         spi_mode,
         0,
