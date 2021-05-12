@@ -61,5 +61,7 @@ let mut lis3dh = Lis3dh::new(i2c, SlaveAddr::Default).unwrap();
 
 - Update the image position according to the accelerometer orientation in real time.
 
+## Writing an SPI driver for the LIS3DH accelerometer
+
 ## Free for all!
 - Now that you know how to read accelerometer sample, put text and images on the display, read button states and control LEDS, use your imagination again to create another cool game! Or, of course, if you have a better idea of how to get your knowledge into action, go right ahead! Ask me or your peers if you need any help or ideas.

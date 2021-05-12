@@ -26,8 +26,9 @@
     - [Assignment](./1_anatomy/assignment.md)
 
 - [Peripherals](./2_peripherals/0_summary.md)
-    - [Core, busses, and peripherals](./2_peripherals/1_buses/0_buses.md)
-        - [nRF52840 block diagram](./2_peripherals/1_buses/1_block_diagram.md)
+    - [Agenda](./2_peripherals/agenda.md)
+    - [Core and peripherals](./2_peripherals/1_peripherals/0_cortex_m_family.md)
+        - [nRF52840 block diagram](./2_peripherals/1_peripherals/1_peripherals.md)
     - [General Purpose Input/Output (GPIO)](./2_peripherals/2_gpio/0_gpio.md)
         - [GPIO configuration](./2_peripherals/2_gpio/1_gpio_configuration.md)
         - [GPIO applications](./2_peripherals/2_gpio/2_gpio_applications.md)

@@ -1,8 +1,8 @@
-# Peripherals
+# Peripherals and protocols
 
-- Relationship between core, busses, and peripherals
-- Properties of several protocols
-- Why the Rust ownership model and peripherals are great together
-- How to write platform independent device drivers using `embedded-hal`
+## You'll be able to:
+- Communicate with external devices, like displays and accelerometers
+- Show accelerometer measurements on the display
+- Write a platform-independent driver crate
 
 <img src="https://tweedegolf.nl/images/embedded-research.jpg" width="50%" />

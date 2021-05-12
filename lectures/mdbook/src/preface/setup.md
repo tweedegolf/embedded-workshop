@@ -72,7 +72,10 @@ Before we begin, we need to test our hardware. We'll be testing the LIS3DH accel
 First, let's wire up the LIS3DH accelerometer for I2C usage. Place it on your breadboard, with each row of pins on a separate side of the gutter.
 As you can see in the image below, the rows on the breadboard labeled by a number are connected. E.g. hole a1 is connected to hole b1 and c1, but not to a2 or a60. Also, both columns on the sides of the breadboards (with the blue (-) and red (+) lines) are connected. Please keep this in mind when wiring up the display and the accelerometer, as shorting the contacts might break your components.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Breadboard.png" width=50%/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Breadboard.png" width="40%"/>
+
+An example of a correct placement of the components on the breadboard:
+<img src="/assets/images/breadboard-components.jpeg" width="20%"/>
 
 **Turn off your nRF52840DK**. Then, wire up the accelerometer, refering to the table below.
 
