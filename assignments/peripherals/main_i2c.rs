@@ -1,16 +1,12 @@
-/* ANCHOR: all */
+
 #![no_std]
 #![no_main]
 
-// ANCHOR: hal_pac_import
 use hal::pac;
 use nrf52840_hal as hal;
-// ANCHOR_END: hal_pac_import
 
-// ANCHOR: prelude
 // Contains all kinds of nice extension traits
 use hal::prelude::*;
-// ANCHOR_END: prelude
 
 use cortex_m_rt::entry;
 
@@ -18,15 +14,12 @@ use assignments as _;
 
 #[entry]
 fn start() -> ! {
-    // ANCHOR: peripheral_init
     // Get a handle to the Cortex-M common peripherals
     let _core_peripherals = pac::CorePeripherals::take().unwrap();
 
     // Get a handle to the nRF52840 device peripherals
     let peripherals = pac::Peripherals::take().unwrap();
-    // ANCHOR_END: peripheral_init
 
-    // ANCHOR: init
     use hal::gpio::Level;
     use hal::twim::{Frequency, Pins};
 
@@ -56,5 +49,4 @@ fn start() -> ! {
     loop {
         // Do nothing
     }
-    // ANCHOR_END: init
 }
