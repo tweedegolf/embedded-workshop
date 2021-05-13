@@ -1,10 +1,20 @@
-# Workshop agenda
+# Workshop contents
 
 - Recap, demo's, questions
 - Peripherals in gerneral
 - GPIO/TIMER peripherals
-- Communication peripherals
-- Device drivers in Rust
-- Reading a datasheet'
 
-TODO when pause?
+*Break*
+
+- Communication peripherals
+
+*Break*
+
+- Peripheral ownership
+- Device drivers in Rust
+- Reading a datasheet
+- Questions
+
+*Break*
+
+- Assignment 2
