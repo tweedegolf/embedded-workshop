@@ -29,6 +29,7 @@ const APP: () = {
     }
 
     #[init]
+    // Initialize peripherals, before interrupts are unmasked
     fn init(ctx: init::Context) -> init::LateResources {
         let port0 = Parts::new(ctx.device.P0);
         let led_1_pin = port0.p0_13.into_push_pull_output(Level::High).degrade();
@@ -61,12 +62,14 @@ const APP: () = {
     }
 
     #[idle]
+    // Defines what happens when there's nothing left to do
     fn idle(_: idle::Context) -> ! {
         loop {
             cortex_m::asm::wfi();
         }
     }
 
+    /// Software task for toggling LED 2
     #[task(resources = [led_2_pin], priority = 1)]
     fn toggle_led_2(ctx: toggle_led_2::Context) {
         let led_2_pin = ctx.resources.led_2_pin;
@@ -76,8 +79,9 @@ const APP: () = {
         };
     }
 
+    /// Software task for setting LED 1 state
     #[task(resources = [led_1_pin], priority = 2)]
-    fn set_led_1(ctx: set_led_1::Context, on: bool) {
+    fn set_led_1_state(ctx: set_led_1_state::Context, on: bool) {
         match on {
             true => ctx.resources.led_1_pin.set_low().unwrap(),
             false=> ctx.resources.led_1_pin.set_high().unwrap(),
@@ -85,21 +89,23 @@ const APP: () = {
         
     }
 
-    #[task(binds = GPIOTE, resources = [gpiote], spawn = [set_led_1])]
+    /// Hardware task for handling GPIOTE events
+    #[task(binds = GPIOTE, resources = [gpiote], spawn = [set_led_1_state])]
     fn on_gpiote(ctx: on_gpiote::Context) {
         let gpiote = ctx.resources.gpiote;
         
         if gpiote.channel0().is_event_triggered() {
             gpiote.channel0().reset_events();
-            ctx.spawn.set_led_1(true).unwrap();
+            ctx.spawn.set_led_1_state(true).unwrap();
         }
 
         if gpiote.channel1().is_event_triggered() {
             gpiote.channel1().reset_events();
-            ctx.spawn.set_led_1(false).unwrap();
+            ctx.spawn.set_led_1_state(false).unwrap();
         }
     }
 
+    /// Hardware task for handling TIMER0 events
     #[task(binds = TIMER0, resources = [timer0], spawn = [toggle_led_2])]
     fn on_timer0(ctx: on_timer0::Context) {
         let timer0 = ctx.resources.timer0;
@@ -109,6 +115,10 @@ const APP: () = {
         }
     }
 
+    // RTIC requires that unused interrupts are declared in an extern block when
+    // using software tasks; these free interrupts will be used to dispatch the
+    // software tasks.
+    // See https://rtic.rs/0.5/book/en/by-example/tasks.html;
     extern "C" {
         fn SWI0_EGU0();
         fn SWI1_EGU1();
