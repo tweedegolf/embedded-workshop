@@ -122,7 +122,7 @@ fn start() -> ! {
     timer0.start(500_000u32);
 
     // Initialize the TIMER0 and GPIOTE handles, passing the initialized
-    // peripherals. 
+    // peripherals.
     interrupt_free(|cs: &CriticalSection| {
         // SAFETY: these handles are updated within a critical section
         unsafe {
