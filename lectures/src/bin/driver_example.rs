@@ -20,8 +20,6 @@ mod cool_laser_machine {
     use embedded_hal::blocking::spi::{Transfer, Write};
     use embedded_hal::digital::v2::OutputPin;
 
-    use core::marker::PhantomData;
-
     /// Represents a Cool Laser Machine, that is connected
     /// to some SPI, and to some NCS pin.
     pub struct CoolLaserMachine<SPI, NCS> {
@@ -41,7 +39,7 @@ mod cool_laser_machine {
         /// of the SPI peripheral and the NCS pin
         pub fn new(spi: SPI, mut ncs: NCS) -> Self {
             // Ensure the NCS pin is set high
-            ncs.set_high();
+            ncs.set_high().unwrap();
             Self { spi, ncs }
         }
 

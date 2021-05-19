@@ -6,3 +6,4 @@
 - All devices modelled as singletons
 - `Peripherals::take()` can be called safely only once
 - Only one safe method of getting handle to peripherals
+- Explicit unsafe to work around this
