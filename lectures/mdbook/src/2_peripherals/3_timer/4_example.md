@@ -3,4 +3,4 @@
 ```rust,noplaypen
 {{#rustdoc_include ../../../../src/bin/timer_config.rs:init}}
 ```
-**How can we improve this?**
+**How can we eliminate busy waiting?**

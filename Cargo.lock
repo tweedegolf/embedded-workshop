@@ -293,6 +293,7 @@ dependencies = [
  "nrf52840-hal",
  "panic-probe",
  "ssd1306",
+ "void",
 ]
 
 [[package]]

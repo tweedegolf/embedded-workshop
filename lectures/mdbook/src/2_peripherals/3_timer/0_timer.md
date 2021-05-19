@@ -4,7 +4,13 @@
 
 <img src="https://infocenter.nordicsemi.com/topic/ps_nrf52840/ip/timer/doc/image/block.svg" width="50%" class="img-overlay img-right"/>
 
+- Basically an always incrementing/decrementing register
+- Uses high-frequency clock signals or external source
+- Prescaler to downscale clock frequency
+
 ## Configuration parameters
 - Prescaler
-- Compare value
+- Compare values
+- Bitmode
 - Mode
+- Events

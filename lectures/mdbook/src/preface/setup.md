@@ -66,7 +66,7 @@ sudo apt install gdb-multiarch
 ```
 
 ## Testing
-Before we begin, we need to test our hardware. We'll be testing the LIS3DH accelerometer, the SSD1306 display, as well as the nRF52840DK board. 
+Before we begin, we need to test our hardware. We'll be testing the LIS3DH accelerometer, the SSD1306 display, as well as the nRF52840DK board. Make sure you have checked out the latest version of the workshop source.
 
 ### LIS3DH accelerometer connection
 First, let's wire up the LIS3DH accelerometer for I2C usage. Place it on your breadboard, with each row of pins on a separate side of the gutter.
@@ -81,9 +81,9 @@ An example of a correct placement of the components on the breadboard:
 
 | LIS3DH Pin | nRF52840DK pin |
 |------------|----------------|
-| VCC        | VDD            |
+| VIN (+)    | VDD            |
 | 3vo        | -              |
-| GND        | GND            |
+| GND (-)    | GND            |
 | SCL        | P0.27          |
 | SDA        | P0.26          |
 | SDO        | -              |
