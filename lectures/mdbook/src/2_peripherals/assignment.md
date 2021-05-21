@@ -50,7 +50,7 @@ disp.init().unwrap(); // Don't forget to initialize!
 
 - Initialize the SCL and SDA pins. Due to some [peculiarities](https://github.com/nrf-rs/nrf-hal/blob/master/nrf-hal-common/src/twim.rs#L45) of the nRF52840, they need to be in floating input mode.
 
-- Initialize the TWIM0 peripheral, which is I2C compatible. Use the [I2C example](./5_i2c/2_example.md) for reference.
+- Initialize the TWIM1 peripheral, which is I2C compatible. Use the [I2C example](./5_i2c/2_example.md) for reference.
 
 - Set up the `lis3dh` driver:
 ```rust,noplaypen
