@@ -18,7 +18,7 @@ For this assignment, you can use `assignments/accel_display/main.rs` as an outli
 
 - Then, you'll need to initialize the pins. All of the pins we're using to control the display, should be put in push-pull output mode, using `into_push_pull_output`. Refer to the previous table for the initial output levels, as well as to the [GPIO example](./2_gpio/1_gpio_configuration.md).
 
-- Next, we'll initialize the SPIM0 peripheral. Refer to the [SPI example](./6_spi/3_example.md) if you need inspiration. Don't forget to check the pins if you are just going to copypasta.
+- Next, we'll initialize the SPIM0 peripheral. Refer to the [SPI example](./6_spi/4_example.md) if you need inspiration. Don't forget to check the pins if you are just going to copypasta.
 
 - Initialize the display in Terminal mode with SPI:
 ```rust,noplaypen
@@ -50,7 +50,7 @@ disp.init().unwrap(); // Don't forget to initialize!
 
 - Initialize the SCL and SDA pins. Due to some [peculiarities](https://github.com/nrf-rs/nrf-hal/blob/master/nrf-hal-common/src/twim.rs#L45) of the nRF52840, they need to be in floating input mode.
 
-- Initialize the TWIM1 peripheral, which is I2C compatible. Use the [I2C example](./5_i2c/2_example.md) for reference.
+- Initialize the TWIM1 peripheral, which is I2C compatible. Use the [I2C example](./5_i2c/3_example.md) for reference.
 
 - Set up the `lis3dh` driver:
 ```rust,noplaypen
