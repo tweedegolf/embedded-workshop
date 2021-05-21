@@ -1,6 +1,7 @@
 <div class="read">
 
 # Assignment 2
+For this assignment, you can use `assignments/accel_display/main.rs` as an outline.
 
 ## Write a message to the screen
 - First, let's hook up the SSD1306 OLED screen if you haven't already done so yet. The best way is to do that using your breadboard. Connect it like this:
