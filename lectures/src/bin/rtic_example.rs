@@ -142,7 +142,7 @@ const APP: () = {
 
         if gpiote.channel0().is_event_triggered() {
             gpiote.channel0().reset_events();
-            ctx.spawn.set_led_2_state(true).unwrap();
+            ctx.spawn.set_led_2_state(true).ok();
         }
 
         if gpiote.channel1().is_event_triggered() {
