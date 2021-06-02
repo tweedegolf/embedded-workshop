@@ -1,0 +1,6 @@
+# Interrupts
+
+## You'll be able to:
+- Reason about the mechanics of interrupts on Cortex-M microcontrollers
+- Write reactive applications using `cortex-m-rt`
+- Create task-based applications using RTIC
