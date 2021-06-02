@@ -27,14 +27,6 @@
  - interrupt priority can be dynamically altered
  - Interrupt with higher priority pauses other interrupts
 
-# What to take into account
-- multiple threads like os, but higher prio pre-empts lower prio
-  - avoid non-reentrant function calls
-- make ISR as short as possible to avoid missed interrupts
-  - use flags to be handled by program (atomics)
-  - avoid locks
-- don't forget to unpend interrupt
-
 
 # configuring interrupts using cortex-m-rt
 - basic steps
@@ -48,6 +40,14 @@
     - `interrupt_free`
     - `CriticalSection::new`, why is it safe
     - Atomics
+
+# What to take into account
+- multiple threads like os, but higher prio pre-empts lower prio
+  - avoid non-reentrant function calls
+- make ISR as short as possible to avoid missed interrupts
+  - use flags to be handled by program (atomics)
+  - avoid locks
+- don't forget to unpend interrupt
 
 # RTIC (Real Time Interrupt-driven Concurrency) usage
 - Application outline

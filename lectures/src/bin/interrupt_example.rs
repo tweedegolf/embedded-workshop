@@ -2,8 +2,6 @@
 #![no_std]
 #![no_main]
 
-use cortex_m::interrupt::{free as interrupt_free, CriticalSection, Mutex};
-use embedded_hal::timer;
 use hal::prelude::*;
 use hal::{
     gpio::{p0::Parts, Level},
@@ -14,12 +12,10 @@ use hal::{
 use nrf52840_hal as hal;
 use pac::Interrupt;
 use pac::{interrupt, Peripherals, NVIC};
-// ANCHOR_END: prelude
 
 use core::ops::Deref;
 use core::{
     cell::RefCell,
-    mem::MaybeUninit,
     sync::atomic::{
         AtomicBool,
         Ordering::{self, Relaxed},
@@ -29,6 +25,8 @@ use cortex_m_rt::entry;
 
 use examples as _;
 
+// ANCHOR: statics
+use cortex_m::interrupt::Mutex;
 // Flags for events
 static BUTTON_1_PRESSED: AtomicBool = AtomicBool::new(false);
 static BUTTON_1_RELEASED: AtomicBool = AtomicBool::new(true);
@@ -42,10 +40,13 @@ static GPIOTE_HANDLE: Mutex<RefCell<Option<Gpiote>>> = Mutex::new(RefCell::new(N
 // Must be initialized before use
 static TIMER0_HANDLE: Mutex<RefCell<Option<Timer<pac::TIMER0, Periodic>>>> =
     Mutex::new(RefCell::new(None));
+// ANCHOR_END: statics
 
+// ANCHOR: gpiote_isr
 #[interrupt]
 // GPIOTE interrupt service routine
 fn GPIOTE() {
+    use cortex_m::interrupt::CriticalSection;
     // SAFETY: we're only borrowing GPIOTE_HANDLE, which is never used
     // outside of this interrupt handler, except for initialization which
     // happens before the GPTIOTE interrupt is unmasked.
@@ -69,10 +70,13 @@ fn GPIOTE() {
         }
     };
 }
+// ANCHOR_END: gpiote_isr
 
+// ANCHOR: timer0_isr
 #[interrupt]
 // TIMER0 interrupt service routine
 fn TIMER0() {
+    use cortex_m::interrupt::CriticalSection;
     // SAFETY: we're only borrowing TIMER0_HANDLE, which is never used
     // outside of this interrupt handler, except for initialization which
     // happens before the TIMER0 interrupt is unmasked.
@@ -89,6 +93,7 @@ fn TIMER0() {
         }
     };
 }
+// ANCHOR_END: timer0_isr
 
 #[entry]
 fn start() -> ! {
@@ -99,6 +104,7 @@ fn start() -> ! {
     let mut led_2_pin = port0.p0_14.into_push_pull_output(Level::High);
     let button_1_pin = port0.p0_11.into_pullup_input().degrade();
 
+    // ANCHOR: init_gpiote
     // Initialize GPIOTE peripheral
     let gpiote = Gpiote::new(peripherals.GPIOTE);
     // Attach button 1 high-to-low transition to channel 0
@@ -115,22 +121,28 @@ fn start() -> ! {
         .input_pin(&button_1_pin)
         .lo_to_hi()
         .enable_interrupt();
-
+    // ANCHOR_END: init_gpiote
+    // ANCHOR: init_timer0
     // Initialize TIMER0 peripheral
     let mut timer0 = Timer::periodic(peripherals.TIMER0);
     // Enable timer interrupt
     timer0.enable_interrupt();
     // Set timer frequency to 2 Hz
     timer0.start(500_000u32);
+    // ANCHOR_END: init_timer0
 
+    // ANCHOR: init_globals
     // Initialize the TIMER0 and GPIOTE handles, passing the initialized
     // peripherals.
+    use cortex_m::interrupt::{free as interrupt_free, CriticalSection};
     interrupt_free(|cs: &CriticalSection| {
         // Interrupts are disabled globally in this block
         TIMER0_HANDLE.borrow(cs).replace(Some(timer0));
         GPIOTE_HANDLE.borrow(cs).replace(Some(gpiote));
     });
+    // ANCHOR_END: init_globals
 
+    // ANCHOR: nvic_unmask
     // Unmask interrupts in NVIC,
     // enabling them globally.
     // Before unmasking, interrupts are disabled
@@ -142,7 +154,9 @@ fn start() -> ! {
         NVIC::unmask(Interrupt::GPIOTE);
         NVIC::unmask(Interrupt::TIMER0);
     }
+    // ANCHOR_END: nvic_unmask
 
+    // ANCHOR: main_loop
     loop {
         // Check whether button 1 has been pressed
         if BUTTON_1_PRESSED.swap(false, Ordering::Release) {
@@ -164,4 +178,5 @@ fn start() -> ! {
         // an interrupt occurs
         cortex_m::asm::wfi();
     }
+    // ANCHOR_END: main_loop
 }
