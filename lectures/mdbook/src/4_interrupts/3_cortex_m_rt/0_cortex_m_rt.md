@@ -8,6 +8,7 @@ use cortex_m_rt::entry;
 
 - Defines where ISRs are located in flash
 - Uses PAC to generate ISR code
+- Little brother `cortex_m` defines `#[interrupt]` macro for ISRs
 
 ## Basic steps
   1. Configure peripherals for interrupt source 

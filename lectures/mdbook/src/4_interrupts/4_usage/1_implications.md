@@ -1,8 +1,9 @@
 # What to take into account
 
-- Like multithreading but higher prio pre-empts lower prio.
+**Like multithreading**
+- ... but higher priority pre-empts lower priority code
 - Avoid non-reentrant function calls
 - Make ISR as short as possible
     - Use flags
     - Avoid locks
-- Dont forget to unpend interrupt
+- Don't forget to clear event

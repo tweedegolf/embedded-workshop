@@ -8,4 +8,7 @@
 {{#rustdoc_include ../../../../src/bin/interrupt_example.rs:nvic_unmask}}
 ```
 
+- Lower value = higher priority
 - `GPIOTE` takes precedence over `TIMER0`
+
+**Questions so far?**
