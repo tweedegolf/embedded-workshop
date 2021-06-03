@@ -35,7 +35,7 @@ fn start() -> ! {
 
     // TWIM stands for Two-Wire Interface Master, and it is compatible with I2C
     let mut i2c: hal::twim::Twim<pac::TWIM0> =
-        todo!("Initialize TWIM0 with the SCL and SDA pins, and 500kHz clock frequency");
+        todo!("Initialize TWIM0 with the SCL and SDA pins, and 400kHz clock frequency");
 
     // On our nRF52840, I2C uses DMA, which is why we have to copy
     // the message from flash to RAM.

@@ -47,3 +47,9 @@ path = "peripherals/main_spi.rs"
 [[bin]]
 name = "peripherals-i2c"
 path = "peripherals/main_i2c.rs"
+
+
+[[bin]]
+name = "accel_display"
+path = "accel_display/main.rs"
+
