@@ -9,8 +9,8 @@ use nrf52840_hal as hal;
 use hal::{
     gpio::{p0::Parts, Input, Level, Output, Pin, PullUp, PushPull},
     gpiote::Gpiote,
-    pac::TIMER0,
     pac::DWT,
+    pac::TIMER0,
     prelude::*,
     timer::Periodic,
     Timer,
@@ -23,7 +23,7 @@ use hal::{
     monotonic=rtic::cyccnt::CYCCNT
 )]
 const APP: () = {
-// ANCHOR_END: app_attr
+    // ANCHOR_END: app_attr
     // ANCHOR: resources
     struct Resources {
         gpiote: Gpiote,
@@ -69,7 +69,7 @@ const APP: () = {
         let mut timer0 = Timer::periodic(ctx.device.TIMER0);
         timer0.enable_interrupt();
         timer0.start(500_000u32);
-    // ANCHOR: init_end
+        // ANCHOR: init_end
         init::LateResources {
             gpiote,
             timer0,
@@ -129,11 +129,11 @@ const APP: () = {
     // ANCHOR: on_gpiote
     /// Hardware task for handling GPIOTE events
     #[task(
-        binds = GPIOTE, 
+        binds = GPIOTE,
         priority = 5,
-        resources = [gpiote, timer0, speed], 
-        spawn = [set_led_2_state], 
-        schedule = [set_led_3_state]
+        resources = [gpiote, timer0, speed],
+        spawn = [set_led_2_state],
+        schedule = [set_led_3_state],
     )]
     fn on_gpiote(ctx: on_gpiote::Context) {
         use rtic::cyccnt::U32Ext;
@@ -153,8 +153,12 @@ const APP: () = {
 
             ctx.spawn.set_led_2_state(false).ok();
             // ANCHOR: schedule
-            ctx.schedule.set_led_3_state(ctx.start + 8_000_000.cycles(), true).ok();
-            ctx.schedule.set_led_3_state(ctx.start + 32_000_000.cycles(), false).ok();
+            ctx.schedule
+                .set_led_3_state(ctx.start + 8_000_000.cycles(), true)
+                .ok();
+            ctx.schedule
+                .set_led_3_state(ctx.start + 32_000_000.cycles(), false)
+                .ok();
             // ANCHOR_END: schedule
         }
     }
@@ -165,19 +169,19 @@ const APP: () = {
     #[task(
         binds = TIMER0,
         priority = 4,
-        resources = [timer0, speed], 
-        spawn = [toggle_led_1]
+        resources = [timer0, speed],
+        spawn = [toggle_led_1],
     )]
     fn on_timer0(ctx: on_timer0::Context) {
         let mut timer0 = ctx.resources.timer0;
-        let fired = timer0.lock(|timer0: &mut Timer<_, _>|{
+        let fired = timer0.lock(|timer0: &mut Timer<_, _>| {
             if timer0.event_compare_cc0().read().bits() != 0x00u32 {
                 timer0.event_compare_cc0().write(|w| unsafe { w.bits(0) });
                 return true;
             }
             false
         });
-        if fired{     
+        if fired {
             ctx.spawn.toggle_led_1().unwrap();
         }
     }

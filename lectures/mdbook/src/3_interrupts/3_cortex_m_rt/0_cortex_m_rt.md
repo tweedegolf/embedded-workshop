@@ -1,14 +1,10 @@
-# Interrupts with cortex-m-rt and PAC
+# Interrupts in Rust
 
-**Remember?**
-```rust,noplaypen
-use cortex_m_rt::entry;
-#[entry]
-```
+**`cortex-m` crate**
 
 - Defines where ISRs are located in flash
 - Uses PAC to generate ISR code
-- Little brother `cortex_m` defines `#[interrupt]` macro for ISRs
+- Defines `#[interrupt]` macro for ISRs
 
 ## Basic steps
   1. Configure peripherals for interrupt source 

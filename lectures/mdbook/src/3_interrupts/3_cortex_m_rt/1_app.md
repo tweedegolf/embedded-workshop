@@ -8,6 +8,6 @@
 
 - GPIO Pins
 - TIMER0
-- GPIO Task and Events (GPIOTE)
+- GPIO Tasks and Events (GPIOTE)
 - Interrupt service routines
 - NVIC

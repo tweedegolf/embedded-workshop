@@ -2,7 +2,7 @@
 
 Same as last time, but also:
 
-- Increase blink speed on LED1 press
+- Increase blink speed on BTN1 press
 - Light up LED3 a while after releasing BTN1
 
 

@@ -2,11 +2,11 @@
 #![no_std]
 #![no_main]
 
-use hal::prelude::*;
 use hal::{
     gpio::{p0::Parts, Level},
     gpiote::Gpiote,
     pac,
+    prelude::*,
     timer::{Periodic, Timer},
 };
 use nrf52840_hal as hal;
@@ -41,59 +41,6 @@ static GPIOTE_HANDLE: Mutex<RefCell<Option<Gpiote>>> = Mutex::new(RefCell::new(N
 static TIMER0_HANDLE: Mutex<RefCell<Option<Timer<pac::TIMER0, Periodic>>>> =
     Mutex::new(RefCell::new(None));
 // ANCHOR_END: statics
-
-// ANCHOR: gpiote_isr
-#[interrupt]
-// GPIOTE interrupt service routine
-fn GPIOTE() {
-    use cortex_m::interrupt::CriticalSection;
-    // SAFETY: we're only borrowing GPIOTE_HANDLE, which is never used
-    // outside of this interrupt handler, except for initialization which
-    // happens before the GPTIOTE interrupt is unmasked.
-    let cs = unsafe { CriticalSection::new() };
-    // SAFETY: before GPIOTE interrupt is unmasked, GPIOTE_HANDLE is initialized.
-    // Therefore it is always initialized before we reach this code.
-    if let Some(ref gpiote) = GPIOTE_HANDLE.borrow(&cs).borrow().deref() {
-        // Check if something happened on channel 0
-        if gpiote.channel0().is_event_triggered() {
-            // Raise flag that button 1 has been pressed
-            BUTTON_1_PRESSED.store(true, Relaxed);
-            // Reset events, so as to prevent looping forever
-            gpiote.channel0().reset_events();
-        }
-        // Check if something happened on channel 1
-        if gpiote.channel1().is_event_triggered() {
-            // Raise flag that button 1 has been released
-            BUTTON_1_RELEASED.store(true, Relaxed);
-            // Reset events, so as to prevent looping forever
-            gpiote.channel1().reset_events();
-        }
-    };
-}
-// ANCHOR_END: gpiote_isr
-
-// ANCHOR: timer0_isr
-#[interrupt]
-// TIMER0 interrupt service routine
-fn TIMER0() {
-    use cortex_m::interrupt::CriticalSection;
-    // SAFETY: we're only borrowing TIMER0_HANDLE, which is never used
-    // outside of this interrupt handler, except for initialization which
-    // happens before the TIMER0 interrupt is unmasked.
-    let cs = unsafe { CriticalSection::new() };
-    // SAFETY: before TIMER0 interrupt is unmasked, TIMER0_HANDLE is initialized.
-    // Therefore it is always initialized before we reach this code.
-    if let Some(ref timer0) = TIMER0_HANDLE.borrow(&cs).borrow().deref() {
-        // Check whether capture/compare register 0 was reached
-        if timer0.event_compare_cc0().read().bits() != 0x00u32 {
-            // Raise flag that timer has fired
-            TIMER0_FIRED.store(true, Relaxed);
-            // Reset cc0, so as to prevent looping forever
-            timer0.event_compare_cc0().write(|w| unsafe { w.bits(0) })
-        }
-    };
-}
-// ANCHOR_END: timer0_isr
 
 #[entry]
 fn start() -> ! {
@@ -180,3 +127,56 @@ fn start() -> ! {
     }
     // ANCHOR_END: main_loop
 }
+
+// ANCHOR: gpiote_isr
+#[interrupt]
+// GPIOTE interrupt service routine
+fn GPIOTE() {
+    use cortex_m::interrupt::CriticalSection;
+    // SAFETY: we're only borrowing GPIOTE_HANDLE, which is never used
+    // outside of this interrupt handler, except for initialization which
+    // happens before the GPTIOTE interrupt is unmasked.
+    let cs = unsafe { CriticalSection::new() };
+    // SAFETY: before GPIOTE interrupt is unmasked, GPIOTE_HANDLE is initialized.
+    // Therefore it is always initialized before we reach this code.
+    if let Some(ref gpiote) = GPIOTE_HANDLE.borrow(&cs).borrow().deref() {
+        // Check if something happened on channel 0
+        if gpiote.channel0().is_event_triggered() {
+            // Raise flag that button 1 has been pressed
+            BUTTON_1_PRESSED.store(true, Relaxed);
+            // Reset events, so as to prevent looping forever
+            gpiote.channel0().reset_events();
+        }
+        // Check if something happened on channel 1
+        if gpiote.channel1().is_event_triggered() {
+            // Raise flag that button 1 has been released
+            BUTTON_1_RELEASED.store(true, Relaxed);
+            // Reset events, so as to prevent looping forever
+            gpiote.channel1().reset_events();
+        }
+    };
+}
+// ANCHOR_END: gpiote_isr
+
+// ANCHOR: timer0_isr
+#[interrupt]
+// TIMER0 interrupt service routine
+fn TIMER0() {
+    use cortex_m::interrupt::CriticalSection;
+    // SAFETY: we're only borrowing TIMER0_HANDLE, which is never used
+    // outside of this interrupt handler, except for initialization which
+    // happens before the TIMER0 interrupt is unmasked.
+    let cs = unsafe { CriticalSection::new() };
+    // SAFETY: before TIMER0 interrupt is unmasked, TIMER0_HANDLE is initialized.
+    // Therefore it is always initialized before we reach this code.
+    if let Some(ref timer0) = TIMER0_HANDLE.borrow(&cs).borrow().deref() {
+        // Check whether capture/compare register 0 was reached
+        if timer0.event_compare_cc0().read().bits() != 0x00u32 {
+            // Raise flag that timer has fired
+            TIMER0_FIRED.store(true, Relaxed);
+            // Reset cc0, so as to prevent looping forever
+            timer0.event_compare_cc0().write(|w| unsafe { w.bits(0) })
+        }
+    };
+}
+// ANCHOR_END: timer0_isr
