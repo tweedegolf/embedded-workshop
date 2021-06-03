@@ -10,6 +10,7 @@ use hal::{
     gpio::{p0::Parts, Input, Level, Output, Pin, PullUp, PushPull},
     gpiote::Gpiote,
     pac::TIMER0,
+    pac::DWT,
     prelude::*,
     timer::Periodic,
     Timer,
